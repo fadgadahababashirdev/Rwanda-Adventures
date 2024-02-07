@@ -2,14 +2,18 @@ import React from 'react'
 import LandingPage from "./LandingPage"
 import Secondfirst from './Secondfirst'
 import ThirdFirst from './ThirdFirst'
-import FourtFirst from './FourtFirst'
+import Kevincomponent from '../kevin/kevincomponent';
+
+
+
 const FadgaAllComonent = () => {
   return (
     <div>
         <LandingPage/>
         <Secondfirst/>
         <ThirdFirst/>
-        <FourtFirst/>
+        <Kevincomponent/>
+        
     </div>
   )
 }
