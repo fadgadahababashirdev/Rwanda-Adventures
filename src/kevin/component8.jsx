@@ -6,7 +6,7 @@ const time = {
 }
 export default function Component8() {
     return (
-        <div className='flex flex-col-reverse justify-start gap-8 bg-blue-100 h-full w-1/3 ml-auto absolute  right-0 z-10  rounded-lg text-center' style={{ top: '-70px' }}>
+        <div className='flex flex-col-reverse justify-start gap-8 bg-blue-100 h-52 w-1/3 ml-auto absolute  right-0 z-10  rounded-lg text-center' style={{ top: '-70px' }}>
             <div className='flex flex-row gap-10 '>
                 <div><h2 className=''>{time.time}</h2></div>
                 <div><h2 className=''>{time.Degree}</h2></div>

@@ -18,7 +18,7 @@ const page = {
 export default function Component5() {
     return (
 
-        <div className="bg- bg-slate-100">
+        <div className="bg- bg-slate-100 pt-o">
             <div className="p-0 bg-slate-100 h-screen mx-10">
                 <div className="flex flex-col sm:flex-row justify-between">
                     <div className="w-full sm:w-1/2 sm:flex-col">
@@ -54,9 +54,9 @@ export default function Component5() {
                         <p className="text-center bg-white">Happiness has been defined in multiple ways...</p>
 
                  </div>
-                 <div className=" h-52  flex flex-col justify-center items-cente ">
+                 <div className=" h-52  flex flex-col justify-center items-cente  ">
                         <div className="relative">
-                            <img src={myImage3} alt="Download (4)" className="h-full object-cover rounded-md transition-transform transform hover:scale-110 p-4" />
+                            <img src={myImage2} alt="Download (4)" className="h-full object-cover rounded-md transition-transform transform hover:scale-110 p-4" />
                             <div className="absolute bottom-0 right-0">
                                 <CiHeart className="bg-black text-white"/>
                             </div>
@@ -64,6 +64,7 @@ export default function Component5() {
                         <p className="text-center bg-white">Happiness has been defined in multiple ways...</p>
 
                  </div>
+                
                  <div className=" h-52  flex flex-col justify-center items-cente ">
                         <div className="relative">
                             <img src={myImage4} alt="Download (4)" className="h-full object-cover rounded-md transition-transform transform hover:scale-110 p-4" />
