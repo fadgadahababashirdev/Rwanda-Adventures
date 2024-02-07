@@ -19,7 +19,7 @@ export default function Component5() {
     return (
 
         <div className="bg- bg-slate-100">
-            <div className="p-0 bg-slate-100 h-screen">
+            <div className="p-0 bg-slate-100 h-screen mx-10">
                 <div className="flex flex-col sm:flex-row justify-between">
                     <div className="w-full sm:w-1/2 sm:flex-col">
                         <p className="border-b border-gray-500 w-full sm:w-1/2 pt-4 pb-4"></p>
@@ -33,39 +33,68 @@ export default function Component5() {
                         <p className="pt-10">{page.text1}</p>
                     </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  h-96 gap-4 mx-10 pt-10">
-                    <div className=" h-52 w-full flex flex-col justify-center items-cente bg-black">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  h-96   gap-14 mx-50 pt-10">
+                    <div className=" h-52  flex flex-col justify-center items-cente ">
                         <div className="relative">
-                            <img src={myImage1} alt="Download (4)" className="h-full object-cover rounded-md transition-transform transform hover:scale-110" />
+                            <img src={myImage1} alt="Download (4)" className="h-full object-cover rounded-md transition-transform transform hover:scale-110 p-4" />
                             <div className="absolute bottom-0 right-0">
-                                <CiHeart className="bg-black"/>
+                                <CiHeart className="bg-black text-white"/>
                             </div>
                         </div>
                         <p className="text-center bg-white">Happiness has been defined in multiple ways...</p>
-                    </div>
 
-                    <div className="w-full flex flex-col justify-center items-center h-1.5/2">
-                        <img src={myImage2} alt="Download (4)" className="h-full object-cover rounded-md transition-transform transform hover:scale-110 p-4" />
-                        <p className="text-center bg-white w-full">Happiness has been defined in multiple ways...</p>
-                    </div>
-
-                    <div className=" h-52 flex flex-col justify-center items-center">
-                        <img src={myImage4} alt="Download (4)" className="h-full object-cover rounded-md transition-transform transform hover:scale-110" />
-
+                 </div>
+                 <div className=" h-52  flex flex-col justify-center items-cente  ">
+                        <div className="relative">
+                            <img src={myImage2} alt="Download (4)" className="h-full object-cover rounded-md transition-transform transform hover:scale-110 p-4" />
+                            <div className="absolute bottom-0 right-0">
+                                <CiHeart className="bg-black text-white"/>
+                            </div>
+                        </div>
                         <p className="text-center bg-white">Happiness has been defined in multiple ways...</p>
-                    </div>
-                    <div className="w-full flex flex-col justify-center items-center h-1.5/2">
-                        <img src={myImage5} alt="Download (4)" className="h-full object-cover rounded-md transition-transform transform hover:scale-110" />
-                        <p className="text-center bg-white w-full ">Happiness has been defined in multiple ways...</p>
-                    </div>
-                    <div className="w-full flex flex-col justify-center items-center h-1.5/2">
-                        <img src={myImage6} alt="Download (4)" className="h-full object-cover rounded-md transition-transform transform hover:scale-110 p-4" />
-                        <p className="text-center bg-white w-full">Happiness has been defined in multiple ways...</p>
-                    </div>
-                    <div className="w-full flex flex-col justify-center items-center h-1.5/2">
-                        <img src={myImage3} alt="Download (4)" className="h-full object-cover rounded-md transition-transform transform hover:scale-110" />
-                        <p className="text-center bg-white w-full ">Happiness has been defined in multiple ways...</p>
-                    </div>
+
+                 </div>
+                 <div className=" h-52  flex flex-col justify-center items-cente ">
+                        <div className="relative">
+                            <img src={myImage3} alt="Download (4)" className="h-full object-cover rounded-md transition-transform transform hover:scale-110 p-4" />
+                            <div className="absolute bottom-0 right-0">
+                                <CiHeart className="bg-black text-white"/>
+                            </div>
+                        </div>
+                        <p className="text-center bg-white">Happiness has been defined in multiple ways...</p>
+
+                 </div>
+                 <div className=" h-52  flex flex-col justify-center items-cente ">
+                        <div className="relative">
+                            <img src={myImage4} alt="Download (4)" className="h-full object-cover rounded-md transition-transform transform hover:scale-110 p-4" />
+                            <div className="absolute bottom-0 right-0">
+                                <CiHeart className="bg-black text-white"/>
+                            </div>
+                        </div>
+                        <p className="text-center bg-white">Happiness has been defined in multiple ways...</p>
+
+                 </div>
+                 <div className=" h-52  flex flex-col justify-center items-cente ">
+                        <div className="relative">
+                            <img src={myImage5} alt="Download (4)" className="h-full object-cover rounded-md transition-transform transform hover:scale-110 p-4" />
+                            <div className="absolute bottom-0 right-0">
+                                <CiHeart className="bg-black text-white"/>
+                            </div>
+                        </div>
+                        <p className="text-center bg-white">Happiness has been defined in multiple ways...</p>
+
+                 </div>
+                 <div className=" h-52  flex flex-col justify-center items-cente ">
+                        <div className="relative">
+                            <img src={myImage6} alt="Download (4)" className="h-full object-cover rounded-md transition-transform transform hover:scale-110 p-4" />
+                            <div className="absolute bottom-0 right-0">
+                                <CiHeart className="bg-black text-white"/>
+                            </div>
+                        </div>
+                        <p className="text-center bg-white">Happiness has been defined in multiple ways...</p>
+
+                 </div>
+
                 </div>
 
             </div>

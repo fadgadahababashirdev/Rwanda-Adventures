@@ -9,12 +9,12 @@ const page = {
 export default function Component6() {
     return (
         <div className="py-20 relative ">
-            <div className="h-screen relative">
+            <div className="h-screen relative ">
                 <div className="absolute inset-0">
                     <img src={myImage} alt="Background" className="h-screen w-full object-cover" />
                     <div className="absolute inset-0 bg-black opacity-50"></div>
                 </div>
-                <div className="flex flex-col  p-10 text-white relative gap-10">
+                <div className="flex flex-col  p-10   pt-40 text-white relative gap-10 ">
                     <h1 className="text-5xl font-bold">{page.heading}</h1>
                     <p className="text-2xl pt-4">{page.text1}</p>
                     <div>
