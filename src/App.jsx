@@ -4,6 +4,7 @@ import FadgaAllComonent from './components/FadgaAllComonent';
 import { Context } from './components/TouristContext';
 import { Route, Routes } from 'react-router-dom';
 import TouristExperience from './components/TouristExperience';
+import Component7 from './kevin/component7';
 
 const App = () => {
   const images = [
@@ -80,6 +81,10 @@ const App = () => {
           <Route
             path="/TouristExperience"
             element={<TouristExperience />}
+          ></Route>
+          <Route
+            path="/Team"
+            element={< Component7/>}
           ></Route>
         </Routes>
       </Context.Provider>
