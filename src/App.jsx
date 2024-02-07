@@ -1,9 +1,12 @@
 import React from 'react'
-
+import Kevincomponent from  './kevin/kevincomponent'
 const App = () => {
   return (
-    <div className='text-red-300 flex justify-center max-h-screen'>This is  a test </div>
+    <div className='flex flex-col justify-between h-screen'>
+     <Kevincomponent/>
+     </div>
   )
+
 }
 
 export default App
