@@ -37,7 +37,7 @@ const LandingPage = () => {
         </div>
       )}
 
-      <div className="top-0 absolute w-full flex justify-center items-center h-full ">
+      <div className="top-0 absolute w-full flex justify-center items-center h-full z-20">
         <div className="text-white">
           <p className="text-center text-sm">Rwanda ,Hospitality is our aim</p>
           <h2 className="">
