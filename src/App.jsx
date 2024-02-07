@@ -1,12 +1,14 @@
-import React from 'react'
+
 import Kevincomponent from  './kevin/kevincomponent'
+import React from 'react';
+import FadgaAllComonent from './components/FadgaAllComonent';
 const App = () => {
   return (
-    <div className='flex flex-col justify-between h-screen'>
-     <Kevincomponent/>
-     </div>
-  )
+    <div>
+   <FadgaAllComonent/>
+    <Kevincomponent/>
+    </div>
+  );
+};
 
-}
-
-export default App
+export default App;
