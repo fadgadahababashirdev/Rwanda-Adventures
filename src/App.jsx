@@ -1,9 +1,11 @@
-import React from 'react'
-
+import React from 'react';
+import FadgaAllComonent from './components/FadgaAllComonent';
 const App = () => {
   return (
-    <div className='text-red-300 flex justify-center max-h-screen'>This is  a test </div>
-  )
-}
+    <div>
+   <FadgaAllComonent/>
+    </div>
+  );
+};
 
-export default App
+export default App;
