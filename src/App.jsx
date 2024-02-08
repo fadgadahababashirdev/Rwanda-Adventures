@@ -3,8 +3,15 @@ import React from 'react';
 import FadgaAllComonent from './components/FadgaAllComonent';
 import { Context } from './components/TouristContext';
 import { Route, Routes } from 'react-router-dom';
-import TouristExperience from './components/TouristExperience';
-import Component7 from './kevin/component7';
+import LandingPage from './components/LandingPage';
+import Secondfirst from './components/Secondfirst';
+import ThirdFirst from './components/ThirdFirst';
+import Component5 from './kevin/Component5';
+import Component6 from './kevin/Component6';
+import Component7 from './kevin/Component7';
+import Component8 from './kevin/Component8';
+import Component9 from './kevin/Footer';
+import Footer from './kevin/Footer';
 
 const App = () => {
   const images = [
@@ -76,17 +83,13 @@ const App = () => {
   return (
     <>
       <Context.Provider value={{ images }}>
-        <Routes>
-          <Route path="/" element={<FadgaAllComonent />}></Route>
-          <Route
-            path="/TouristExperience"
-            element={<TouristExperience />}
-          ></Route>
-          <Route
-            path="/Team"
-            element={< Component7/>}
-          ></Route>
-        </Routes>
+        <LandingPage></LandingPage>
+        <Secondfirst></Secondfirst>
+        <ThirdFirst></ThirdFirst>
+        <Component5></Component5>
+        <Component6></Component6>
+        <Component7></Component7>
+        <Footer></Footer>
       </Context.Provider>
     </>
   );
