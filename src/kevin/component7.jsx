@@ -99,7 +99,7 @@ export default () => {
         },
     ];
     return (
-        <div className="h-screen mt-4 ml-10 latest">
+        <div className="h-screen mt-4 ml-10 latest" id="Team">
             <div className='flex flex-col lg:flex-row'>
                 <div className="lg:w-1/2">
                     <div>

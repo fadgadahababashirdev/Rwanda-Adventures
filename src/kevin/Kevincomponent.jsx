@@ -1,3 +1,4 @@
+
 import React from 'react'
 import Component5 from './component5'
 import Component6 from './component6'
@@ -11,8 +12,5 @@ const kevincomponent = () => {
      <Component7/>
      <Footer/> 
      </div>
-  )
-
-}
-
-export default kevincomponent 
+  );}
+export default kevincomponent;
