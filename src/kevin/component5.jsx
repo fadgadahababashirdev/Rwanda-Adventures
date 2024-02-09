@@ -18,8 +18,8 @@ const page = {
 export default function Component5() {
     return (
 
-        <div className="bg- bg-slate-100 pt-o">
-            <div className="p-0 bg-slate-100 h-screen mx-10">
+        <div className="py-10 bg-slate-100 sm:h-full mx-10 mb-20">
+            <div className="py-10 bg-slate-100 h-screen sm:h-full mx-10">
                 <div className="flex flex-col sm:flex-row justify-between">
                     <div className="w-full sm:w-1/2 sm:flex-col">
                         <p className="border-b border-gray-500 w-full sm:w-1/2 pt-4 pb-4"></p>
@@ -33,7 +33,7 @@ export default function Component5() {
                         <p className="pt-10">{page.text1}</p>
                     </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  h-96   gap-14 mx-50 pt-10">
+                <div className="grid grid-cols-2  mb-24  md:grid-cols-2 lg:grid-cols-3  h-96   gap-14 lg:mx-50  pt-10">
                     <div className=" h-52  flex flex-col justify-center items-cente ">
                         <div className="relative">
                             <img src={myImage1} alt="Download (4)" className="h-full object-cover rounded-md transition-transform transform hover:scale-110 p-4" />
@@ -65,7 +65,7 @@ export default function Component5() {
 
                  </div>
                 
-                 <div className=" h-52  flex flex-col justify-center items-cente ">
+                 <div className=" h-52 flex flex-col justify-center items-cente ">
                         <div className="relative">
                             <img src={myImage4} alt="Download (4)" className="h-full object-cover rounded-md transition-transform transform hover:scale-110 p-4" />
                             <div className="absolute bottom-0 right-0">
@@ -75,7 +75,7 @@ export default function Component5() {
                         <p className="text-center bg-white">Happiness has been defined in multiple ways...</p>
 
                  </div>
-                 <div className=" h-52  flex flex-col justify-center items-cente ">
+                 <div className=" h-52  hidden md:flex flex-col  lg:flex-col justify-center items-cente ">
                         <div className="relative">
                             <img src={myImage5} alt="Download (4)" className="h-full object-cover rounded-md transition-transform transform hover:scale-110 p-4" />
                             <div className="absolute bottom-0 right-0">
@@ -85,7 +85,7 @@ export default function Component5() {
                         <p className="text-center bg-white">Happiness has been defined in multiple ways...</p>
 
                  </div>
-                 <div className=" h-52  flex flex-col justify-center items-cente ">
+                 <div className="  h-52  hidden md:flex flex-col  lg:flex-col justify-center items-center ">
                         <div className="relative">
                             <img src={myImage6} alt="Download (4)" className="h-full object-cover rounded-md transition-transform transform hover:scale-110 p-4" />
                             <div className="absolute bottom-0 right-0">

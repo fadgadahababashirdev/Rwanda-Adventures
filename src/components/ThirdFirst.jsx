@@ -22,8 +22,6 @@ import { Link } from 'react-router-dom';
 export default () => {
 
   const {images} =useContext(Context)
-
- 
   return (
     <div className="h-screen mt-4 ml-10 latest">
       <hr className="w-72" />
