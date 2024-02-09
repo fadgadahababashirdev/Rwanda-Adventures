@@ -43,9 +43,9 @@ export default () => {
           1024: {
             slidesPerView: 4,
           },
-          1633:{
-            slidesPerView:8
-          }
+          1633: {
+            slidesPerView: 8,
+          },
         }}
         // breakpoints={{
 
@@ -67,7 +67,7 @@ export default () => {
                 <img
                   src={image.img}
                   alt=""
-                  style={{ width: '100vh', height: '80vh' }}
+                  style={{ width: '100vh', height: '50vh' }}
                 />
               </Link>
               <h4 className="ml-1">{image.title}</h4>

@@ -11,13 +11,13 @@ const Navbar = () => {
           Rwanda Ventures
         </h1>
         <ul className="flex">
-         <Link to=""
+         <Link to="LandingPage"
          spy={true}
          smooth={true}
          offset={-70}
          duration={1000}
          >
-
+         <li className="text-serif text-white font-extrabold mx-5">Home</li>
          </Link>
           <li className="text-serif text-white font-extrabold mx-5">
             lorem

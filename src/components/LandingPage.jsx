@@ -16,7 +16,7 @@ const LandingPage = () => {
           <p className="text-white text-center">
             Rwanda the country of a thousand hills
           </p>
-          <h1 className="text-white text-center text-2xl">
+          <h1 className="text-white text-center text-2xl font-sans">
             The safesty Country in the world to
           </h1>
           <h1 className="text text-white text-center">
