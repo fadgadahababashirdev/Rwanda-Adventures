@@ -1,49 +1,28 @@
-import { useState, useEffect } from 'react';
 import React from 'react';
 import colora from './colora.mp4';
-import { HashLink as Link } from 'react-router-hash-link';
-
+import Navbar from './Navbar';
 const LandingPage = () => {
-  const [links, setLinks] = useState(false);
   return (
-    <div className="relative w-full h-full">
-      <video src={colora} autoPlay muted loop className="object-cover" />
-      <div className="bg-black w-full h-full opacity-35 z-10 top-0 absolute"></div>
-      <div className="z-10 absolute top-0 flex  w-full justify-between px-5 mt-5 containe text-white">
-        <h1>Rwanda Ventures</h1>
-        <ul className="flex unordered">
-          <li className="mx-2">Rwanda</li>
-          <Link to="/Team">
-            <li className="mx-2">Team</li>
-          </Link>
-          <li className="mx-2">Rwanda</li>
-          <li className="mx-2">Rwanda</li>
-          <img
-            src="../public/menu.svg"
-            className="w-5 toggle"
-            onClick={() => setLinks(!links)}
-          />
-        </ul>
+    <div className="landigpage w-full h-full relative">
+      <div className="video">
+        <video src={colora} autoPlay loop muted></video>
       </div>
-
-      {links && (
-        <div className="bg-slate-200 z-10 absolute top-0 right-5 mt-16">
-          <ul className="block p-3">
-            <li className="mx- 2 text-black text-sm">Rwanda</li>
-            <li className="mx- 2 text-black text-sm">Rwanda</li>
-            <li className="mx- 2 text-black text-sm">Rwanda</li>
-            <li className="mx- 2 text-black text-sm">Rwanda</li>
-          </ul>
-        </div>
-      )}
-
-      <div className="top-0 absolute w-full flex justify-center items-center h-full z-20">
-        <div className="text-white">
-          <p className="text-center text-sm">Rwanda ,Hospitality is our aim</p>
-          <h2 className="">
-            The happiest and safesty country in <br />{' '}
-            <span className="flex justify-center">the world</span>
-          </h2>
+      <div className="absolute top-0 w-full py-3 px-3 z-20">
+        <Navbar />
+      </div>
+      <div className="color w-full h-screen bg-black absolute top-0 opacity-45"></div>
+      <div className="content w-full h-full absolute top-0 flex justify-center items-center mt">
+        <div className="text center centerContent">
+          <p className="text-white text-center">
+            Rwanda the country of a thousand hills
+          </p>
+          <h1 className="text-white text-center text-2xl">
+            The safesty Country in the world to
+          </h1>
+          <h1 className="text text-white text-center">
+            {' '}
+            explore and enjoy holidays
+          </h1>
         </div>
       </div>
     </div>

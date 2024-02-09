@@ -2,88 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
+
 *{
-  margin:0;
+  margin: 0;
   padding:0;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
-  
-}
-.logoandlinks{
-  display: flex;
-  justify-content: space-between;
-}
-h2{
-  font-size:4em;
-}
-h1{
-  font-size:2em;
+  box-sizing: border-box;
 }
 
-/* @media querry */
-@media screen and (max-width:576px){
-  .unordered li{
-    visibility: hidden;
-    
-  }
+.video video{
+  object-fit: cover;
+  height: 100vh;
+  width:100vw;
+}
 
-  
-  h1{
-    font-size: 10px;
+@media screen and (min-width:576px){
+  .content h1 , p{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 4rem;
     margin-top: 12px;
-    text-wrap: nowrap;
   }
-  h2{
-    font-size: 18px;
+
+  .centerContent{
+    margin-top: 128px;
   }
-  .pandh2{
+
+}
+
+@media screen and (min-width:577px) and (max-width:990px){
+
+  .centerContent h1{
+   
+    font-size: 2rem;
+  }
+
+}
+
+@media screen and (min-width:576px){
+  p{
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 2rem;
     
   }
+
 }
 
-@media screen and (min-width:577px) and (max-width:5000px){
-  .toggle{
-    visibility: hidden;
+@media screen and (min-width:576px){
+  .navbar img{
+   display: none;
   }
-}
 
+}
 @media screen and (max-width:576px){
-  .blue{
-    position:inherit;
-    
-    
+  .navbar ul li{
+   display: none;
   }
-  /* .secondfirst{
-    position:inherit
-
-  } */
-}
-@media screen and (min-width:577px) and (max-width:1276px){
-  .blue{
-    position:inherit;
-    margin-right: 1200px;
-    }
 
 }
 
 
+@media screen and (min-width:576px){
+  .imageontop{
+   position: relative;
+  }
+   
+  
+  .bluediv{
+    position:absolute;
+    top:0;
+    margin-top: 15%;
+    width:40vw;
+    margin-left: 80px;
+    border-radius: 12px;
+    box-shadow: 5 1 5 rgb(0.0.0.0.1);
 
-.latest img{
-  transition:transform 0.6s ease-in-out;
-  width:400px;
-  height:250px;
+  }
+
+  .imageontop img{
+    width:100vw;
+    padding-right:150px;
+    padding-left:150px;
+  }
 
 }
-
-.latest img:hover{
-  transform: scale(1.03);
-}
-
-.swiper-button-prev{
-  visibility:hidden;
-}
-.swiper-button-next{
-  visibility:hidden;
-}
-
-
 
