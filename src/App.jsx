@@ -1,16 +1,13 @@
-import Kevincomponent from './kevin/kevincomponent';
+
 import React from 'react';
-import FadgaAllComonent from './components/FadgaAllComonent';
 import { Context } from './components/TouristContext';
-import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import LandingPage from './components/LandingPage';
 import Secondfirst from './components/Secondfirst';
 import ThirdFirst from './components/ThirdFirst';
 import Component5 from './kevin/Component5';
 import Component6 from './kevin/Component6';
 import Component7 from './kevin/Component7';
-import Component8 from './kevin/Component8';
-import Component9 from './kevin/Footer';
 import Footer from './kevin/Footer';
 
 const App = () => {
@@ -81,17 +78,17 @@ const App = () => {
     },
   ];
   return (
-    <>
+    <BrowserRouter>
       <Context.Provider value={{ images }}>
         <LandingPage></LandingPage>
-        <Secondfirst></Secondfirst>
-        <ThirdFirst></ThirdFirst>
+       <Secondfirst></Secondfirst>
+         <ThirdFirst></ThirdFirst>
         <Component5></Component5>
         <Component6></Component6>
         <Component7></Component7>
         <Footer></Footer>
       </Context.Provider>
-    </>
+    </BrowserRouter>
   );
 };
 
