@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Navigation,
   Pagination,
@@ -18,7 +19,7 @@ import { Link } from 'react-router-dom';
 export default () => {
   const { images } = useContext(Context);
   return (
-    <div className="h-screen mt-4 latest">
+    <div className="h-full mt-4 latest">
       <hr className="w-72" />
       <div className="text-serif">
         <h2 className="text-sm mt-4  text-center"> Latest tours with...</h2>
@@ -45,20 +46,8 @@ export default () => {
           },
           1633: {
             slidesPerView: 8,
-          },
+          }
         }}
-        // breakpoints={{
-
-        //   460: {
-        //     slidesPerView: 2,
-        //   },
-        //   768: {
-        //     slidesPerView: 3,
-        //   },
-        //   1024: {
-        //     slidesPerView: 4,
-        //   },
-        // }}
       >
         {images.map((image) => {
           return (
@@ -71,7 +60,9 @@ export default () => {
                 />
               </Link>
               <h4 className="ml-1">{image.title}</h4>
-              <p className="font-sans text-sm ml-1">{image.description}</p>
+              <p className="font-sans text-sm text-start">
+                {image.description}
+              </p>
             </SwiperSlide>
           );
         })}

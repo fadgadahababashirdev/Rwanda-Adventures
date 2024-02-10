@@ -1,15 +1,16 @@
-
 import React from 'react';
 import { Context } from './components/TouristContext';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import LandingPage from './components/LandingPage';
 import Secondfirst from './components/Secondfirst';
-import ThirdFirst from './components/ThirdFirst';
 import Component5 from './kevin/Component5';
-import Component6 from './kevin/Component6'
+import Component6 from './kevin/Component6';
 import Component7 from './kevin/Component7';
+import LoginPage from './components/LoginPage';
+import Register from './components/Register';
+import Footer1 from './kevin/Footer1';
+import ThirdFirst from './components/ThirdFirst';
 
-import Footer from './kevin/Footer';
 
 const App = () => {
   const images = [
@@ -81,13 +82,22 @@ const App = () => {
   return (
     <BrowserRouter>
       <Context.Provider value={{ images }}>
-        <LandingPage></LandingPage>
-       <Secondfirst></Secondfirst>
-         <ThirdFirst></ThirdFirst>
-        <Component5></Component5>
-        <Component6></Component6>
-        <Component7></Component7>
-        <Footer></Footer>
+        <Routes>
+          <Route path="/" element={<LandingPage />}></Route>
+           
+
+          <Route path="/Login" element={<LoginPage />}></Route>
+          <Route path="/Register" element={<Register />}></Route>
+        </Routes>
+        <Secondfirst/>
+        <ThirdFirst/>
+        <Component5/>
+        <Component6/>
+        <Component7/>
+        
+        <Footer1/>
+        
+        
       </Context.Provider>
     </BrowserRouter>
   );
