@@ -6,6 +6,8 @@ import Secondfirst from './components/Secondfirst';
 import Component5 from './kevin/Component5';
 import Component6 from './kevin/Component6';
 import Component7 from './kevin/Component7';
+import ThirdFirst from './components/ThirdFirst';
+import Footer from './kevin/Footer';
 
 
 const App = () => {
