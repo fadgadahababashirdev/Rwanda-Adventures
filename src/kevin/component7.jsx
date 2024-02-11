@@ -100,16 +100,16 @@ export default () => {
         },
     ];
     return (
-        <div className="h-screen mt-4 ml-10 latest" id="Team">
+        <div className="h-screen mt-4  latest" id="Team">
             <div className='flex flex-col lg:flex-row'>
-                <div className="lg:w-1/2">
+                <div className="lg:w-1/2 ml-10">
                     <div>
                         <p className="border-b w-1/2 border-gray-500 sm:w-full pt-4 pb-4"></p>
                     </div>
                     <h1 className="text-3xl font-bold pt-4">OUR TEAM</h1>
                 </div>
                 <div className="lg:w-1/2 px-10">
-                    <p className="pt-10">At Explorer Rwanda, our team is the heart and soul of everything we do. Comprised of passionate individuals with diverse backgrounds and expertise, we come together to achieve one common goal: delivering exceptional results for our clients..</p>
+                    <p className="pt-10 text-sm">At Explorer Rwanda, our team is the heart and soul of everything we do. Comprised of passionate individuals with diverse backgrounds and expertise, we come together to achieve one common goal: delivering exceptional results for our clients..</p>
                 </div>
             </div>
 
@@ -131,7 +131,7 @@ export default () => {
                 {images.map((image) => {
                     return (
                         <SwiperSlide className="mt-5">
-                            <img src={image.img} alt="" className="rounded-t-xl" />
+                            <img src={image.img} alt="" className="rounded-t-xl"  style={{width: '100vh', height: '50vh'}}/>
                             <h3 className="ml-1">{image.Name}</h3>
                             <h4 className="ml-1">{image.title}</h4>
                             <p className="font-sans text-sm ml-1">{image.description}</p>

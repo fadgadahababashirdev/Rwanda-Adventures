@@ -8,6 +8,7 @@ import ThirdFirst from './components/ThirdFirst';
 import Component5 from './kevin/Component5';
 import Component6 from './kevin/Component6'
 import Component7 from './kevin/Component7';
+import ContactUs from './kevin/ContactUs';
 
 import Footer from './kevin/Footer';
 
@@ -87,8 +88,12 @@ const App = () => {
         <Component5></Component5>
         <Component6></Component6>
         <Component7></Component7>
+        <Routes>
+      <Route path='/ContactUs' element={<ContactUs/>}/>
+      </Routes>
         <Footer></Footer>
       </Context.Provider>
+      
     </BrowserRouter>
   );
 };

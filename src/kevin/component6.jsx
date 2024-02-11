@@ -10,7 +10,7 @@ const page = {
 export default function Component6() {
     return (
         <div className=" background">
-            <div className="sm:h-full relative ">
+            <div className="sm:h-full  relative lg:h-full ">
                 
                 <div className="flex flex-col  p-10  pt-40 text-white  gap-10 ">
                     <h1 className="  text-3xl md:text-5xl font-bold">{page.heading}</h1>

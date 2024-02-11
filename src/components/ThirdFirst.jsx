@@ -18,7 +18,7 @@ import { Link } from 'react-router-dom';
 export default () => {
   const { images } = useContext(Context);
   return (
-    <div className="h-screen mt-4 latest">
+    <div className="h-full mt-4 latest">
       <hr className="w-72" />
       <div className="text-serif">
         <h2 className="text-sm mt-4  text-center"> Latest tours with...</h2>
@@ -67,7 +67,7 @@ export default () => {
                 <img
                   src={image.img}
                   alt=""
-                  style={{ width: '100vh', height: '80vh' }}
+                  style={{ width: '100vh', height: '50vh' }}
                 />
               </Link>
               <h4 className="ml-1">{image.title}</h4>
