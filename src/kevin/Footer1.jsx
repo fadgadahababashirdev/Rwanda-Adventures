@@ -1,3 +1,4 @@
+import React from 'react';
 import { FaTiktok } from 'react-icons/fa';
 import { IoLogoInstagram } from 'react-icons/io';
 import { FaFacebookF } from 'react-icons/fa';

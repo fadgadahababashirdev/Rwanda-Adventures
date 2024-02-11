@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Navigation,
   Pagination,
@@ -43,22 +44,10 @@ export default () => {
           1024: {
             slidesPerView: 4,
           },
-          1633:{
-            slidesPerView:8
+          1633: {
+            slidesPerView: 8,
           }
         }}
-        // breakpoints={{
-
-        //   460: {
-        //     slidesPerView: 2,
-        //   },
-        //   768: {
-        //     slidesPerView: 3,
-        //   },
-        //   1024: {
-        //     slidesPerView: 4,
-        //   },
-        // }}
       >
         {images.map((image) => {
           return (
@@ -71,7 +60,9 @@ export default () => {
                 />
               </Link>
               <h4 className="ml-1">{image.title}</h4>
-              <p className="font-sans text-sm ml-1">{image.description}</p>
+              <p className="font-sans text-sm text-start">
+                {image.description}
+              </p>
             </SwiperSlide>
           );
         })}
