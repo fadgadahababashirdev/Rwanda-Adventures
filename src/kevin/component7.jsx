@@ -7,6 +7,7 @@ import {
     A11y,
     Autoplay,
 } from 'swiper/modules';
+import './comp7.css'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -20,9 +21,19 @@ export default () => {
 
     const breakpoints = {
 
-        768: {
+        1280:{
             slidesPerView: 3.5,
             spaceBetween: 30,
+        },
+        1024:{
+            slidesPerView: 2.5,
+            spaceBetween: 30,
+        },
+        
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+            slideHeight:50,
         },
         720: {
             slidesPerView: 2,
@@ -31,8 +42,15 @@ export default () => {
             slidesPerView: 2,
             spaceBetween: 20,
         },
+        540:{
+            slidesPerView: 2,
+            spaceBetween: 10, 
+        },
         320: {
             slidesPerView: 1,
+        },
+        280:{
+            slidesPerView: 1,  
         }
     };
     const images = [
@@ -101,7 +119,7 @@ export default () => {
         },
     ];
     return (
-        <div className="h-screen mt-4  latest" id="Team">
+        <div className="h-full mt-4  latest" id="Team">
             <div className='flex flex-col lg:flex-row'>
                 <div className="lg:w-1/2 ml-10">
                     <div>

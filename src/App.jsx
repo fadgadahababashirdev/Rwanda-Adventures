@@ -3,12 +3,11 @@ import { Context } from './components/TouristContext';
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import LandingPage from './components/LandingPage';
 import Secondfirst from './components/Secondfirst';
-import Component5 from './kevin/Component5';
-import Component6 from './kevin/Component6';
-import Component7 from './kevin/Component7';
+import Component5 from './kevin/component5';
+import Component6 from './kevin/component6'
+import Component7 from './kevin/component7';
 import ThirdFirst from './components/ThirdFirst';
 import Footer from './kevin/Footer';
-
 
 const App = () => {
   const images = [
@@ -88,7 +87,6 @@ const App = () => {
         <Component7></Component7>
         <Footer></Footer>
       </Context.Provider>
-      
     </BrowserRouter>
   );
 };
