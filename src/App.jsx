@@ -8,6 +8,8 @@ import Component6 from './kevin/component6'
 import Component7 from './kevin/component7';
 import ThirdFirst from './components/ThirdFirst';
 import Footer from './kevin/Footer';
+import LoginPage from './components/LoginPage';
+import Register from './components/Register';
 
 const App = () => {
   const images = [
@@ -79,8 +81,12 @@ const App = () => {
   return (
     <BrowserRouter>
       <Context.Provider value={{ images }}>
-        <LandingPage></LandingPage>
-       <Secondfirst></Secondfirst>
+       <Routes>
+        <Route path="/Login"element={<LoginPage/>}></Route>
+        <Route path="/Register"element={<Register/>}></Route>
+       </Routes>
+       <LandingPage></LandingPage>
+        <Secondfirst></Secondfirst>
          <ThirdFirst></ThirdFirst>
         <Component5></Component5>
         <Component6></Component6>
