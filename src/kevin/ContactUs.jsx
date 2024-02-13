@@ -23,7 +23,7 @@ export default function ContactUs() {
 
         setErrors({
             ...errors,
-            [name]: '' 
+            [name]: ''
         });
     };
 
@@ -49,7 +49,7 @@ export default function ContactUs() {
             validationErrors.phoneNumber = "Phone number should be numeric";
         }
         if (!formData.message.trim()) {
-           validationErrors.message = "Message is required";
+            validationErrors.message = "Message is required";
         }
         setErrors(validationErrors);
 
@@ -68,14 +68,14 @@ export default function ContactUs() {
     };
 
     return (
-        <div id='contact' className="mt-5">
-            <form className="flex flex-col  border-2 gap-2 justify-evenly w-2/2 mx-5 text-center hover:border-blue-500 lg:w-1/2 h-72 lg:ml-10 bg-blue-200" onSubmit={handleSubmit}>
-                <div><h1 className="text-xl text-center font-sans sm">Contact Us</h1></div>
-                <div className="flex flex-row mx-5 justify-center">
+        <div id='contact' className="mt-12">
+            <form className="flex flex-col border-2 gap-2 justify-evenly w-2/2 mx-5 text-center hover:border-blue-500 lg:w-1/2 h-72 lg:ml-10 bg-blue-200" onSubmit={handleSubmit}>
+                <h1 className="text-xl text-center font-sans sm">Contact Us</h1>
+                <div className=" gap-2 mx-5 justify-center">
                     <input
                         type="text"
                         placeholder="First Name"
-                        className="text-center mx-2 sm:ml-1"
+                        className="text-center mx-2 px-3 py-2 rounded"
                         name="firstName"
                         value={formData.firstName}
                         onChange={handleChange}
@@ -83,7 +83,7 @@ export default function ContactUs() {
                     <input
                         type="text"
                         placeholder="Last Name"
-                        className="text-center mx-2 "
+                        className="text-center mx-2  px-3 py-2 mt-2 rounded"
                         name="lastName"
                         value={formData.lastName}
                         onChange={handleChange}
@@ -118,8 +118,9 @@ export default function ContactUs() {
                     onChange={handleChange}
                 />
                 {errors.message && <div className="text-red-500">{errors.message}</div>}
-                <button className="bg-blue-300 w-2/12 rounded-lg hover:bg-blue-400" type="submit">Submit</button>
+                <button className="bg-blue-300 w-2/12 rounded-lg hover:bg-blue-400 mb-2 " type="submit">Submit</button>
             </form>
         </div>
+
     );
 }

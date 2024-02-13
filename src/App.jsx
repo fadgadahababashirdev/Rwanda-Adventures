@@ -1,17 +1,10 @@
 import React from 'react';
-import { Context } from './components/TouristContext';
-import { BrowserRouter,Route,Routes } from 'react-router-dom';
-import LandingPage from './components/LandingPage';
-import Secondfirst from './components/Secondfirst';
-import Component5 from './kevin/component5';
-import Component6 from './kevin/component6'
-import Component7 from './kevin/component7';
-import ThirdFirst from './components/ThirdFirst';
-import Footer from './kevin/Footer';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import LoginPage from './components/LoginPage';
 import Register from './components/Register';
-import ContactUs from './kevin/ContactUs';
-
+import Mainpage from './components/mainpage';
+import { Context } from './components/TouristContext';
+import Services from './kevin/Services';
 const App = () => {
   const images = [
     {
@@ -79,24 +72,17 @@ const App = () => {
       id: '9',
     },
   ];
-  return (
-    <BrowserRouter>
+    return (
       <Context.Provider value={{ images }}>
-       <Routes>
-        <Route path="/Login"element={<LoginPage/>}></Route>
-        <Route path="/Register"element={<Register/>}></Route>
-       </Routes>
-       <LandingPage></LandingPage>
-        <Secondfirst></Secondfirst>
-         <ThirdFirst></ThirdFirst>
-        <Component5></Component5>
-        <Component6></Component6>
-        <Component7></Component7>
-        <ContactUs/>
-        <Footer></Footer>
-      </Context.Provider>
-    </BrowserRouter>
-  );
-};
-
-export default App;
+      <Router>
+        <Routes>
+          <Route path="/" element={<Mainpage />} />
+          <Route path="/Login" element={<LoginPage />} />
+          <Route path="/Register" element={<Register />} />
+          <Route path="/Services" element={<Services />} />
+        </Routes>
+      </Router>
+        </Context.Provider>
+     );
+  };
+  export default App;

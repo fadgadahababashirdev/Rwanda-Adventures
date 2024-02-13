@@ -9,7 +9,7 @@ const Navbar = () => {
     <div className="relative">
       <div className=" flex justify-between navbar">
         <h1 className="text-2xl font-serif text-white font-extrabold flex-nowrap">
-          Rwanda Ventures
+          Rwanda Adventures
         </h1>
         <ul className="flex">
           <Link

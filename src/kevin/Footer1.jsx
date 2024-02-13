@@ -13,7 +13,7 @@ export default function Footer1() {
 
             <div className='flex flex-col gap-2'>
                 <div className=''>
-                    <p className="text-2xl lg:mr-48 font-semibold lg:flex flex-row justify-start" >RWANDA VENTURES</p>
+                    <p className="text-2xl lg:mr-48 font-semibold lg:flex flex-row justify-start" >RWANDA  ADVENTURES</p>
                 </div>
                 <div>
                     <div className='lg:flex flex-row  gap-28'><div className='flex flex-col gap-2 font-sans'>
