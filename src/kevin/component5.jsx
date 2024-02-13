@@ -8,7 +8,7 @@ import myImage4 from '../images/Finland_Lapland_winter_Sunset snowshoeing_Levi_o
 import myImage5 from '../images/Savoy-Interior-7.jpeg';
 import myImage6 from '../images/___Lapland_People_Sami_Mikko Ryhänen.12414660736871135524.jpg'
 import { CiHeart } from "react-icons/ci";
-
+import '../components/places.css'
 const page = {
     heading: "Get to know Rwanda",
     text: "Explore all articles",
@@ -18,7 +18,7 @@ const page = {
 export default function Component5() {
     return (
 
-        <div className="py-10 bg-slate-100 sm:h-full  mb-20">
+        <div id='five' className="py-10 bg-slate-100 sm:h-full  mb-20">
             <div className=" bg-slate-100 h-full sm:h-full mx-10 ">
                 <div className="flex flex-col sm:flex-row justify-between">
                     <div className="w-full sm:w-1/2 sm:flex-col">
@@ -80,7 +80,7 @@ export default function Component5() {
                  </div>
                 
                  <div className="  h-52  hidden md:flex flex-col  lg:flex-col justify-center items-center ">
-                        <div className="relative md:hidden">
+                        <div className="relative">
                             <img src={myImage6} alt="Download (4)" className="h-full object-cover rounded-md transition-transform transform hover:scale-110 p-4" />
                             <div className="absolute bottom-0 right-0">
                                 <CiHeart className="bg-black text-white"/>
@@ -89,7 +89,7 @@ export default function Component5() {
                         <p className="text-center bg-white text-lg">Happiness has been defined in multiple ways...</p>
 
                  </div>
-                    <div className=" h-52  flex flex-col justify-center items-cente  md:hidden">
+                    <div className=" h-52  flex flex-col justify-center items-cente  md:">
                         <div className="relative">
                             <img src={myImage1} alt="Download (4)" className="h-full object-cover rounded-md transition-transform transform hover:scale-110 p-4" />
                             <div className="absolute bottom-0 right-0">

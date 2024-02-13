@@ -10,6 +10,7 @@ import ThirdFirst from './components/ThirdFirst';
 import Footer from './kevin/Footer';
 import LoginPage from './components/LoginPage';
 import Register from './components/Register';
+import ContactUs from './kevin/ContactUs';
 
 const App = () => {
   const images = [
@@ -91,6 +92,7 @@ const App = () => {
         <Component5></Component5>
         <Component6></Component6>
         <Component7></Component7>
+        <ContactUs/>
         <Footer></Footer>
       </Context.Provider>
     </BrowserRouter>

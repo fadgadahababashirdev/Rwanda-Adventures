@@ -9,7 +9,7 @@ const page = {
 };
 export default function Component6() {
     return (
-        <div className=" background">
+        <div  id='six' className=" background">
             <div className="sm:h-full  relative lg:h-full ">
                 
                 <div className="flex flex-col  p-10  pt-40 text-white  gap-10 ">

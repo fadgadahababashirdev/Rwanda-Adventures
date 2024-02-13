@@ -19,7 +19,7 @@ import { Link } from 'react-router-dom';
 export default () => {
   const { images } = useContext(Context);
   return (
-    <div className="h-full mt-4 latest">
+    <div id='third' className="h-full mt-4 latest">
       <hr className="w-72" />
       <div className="text-serif">
         <h2 className="text-sm mt-4  text-center"> Latest tours with...</h2>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Secondfirst = () => {
   return (
-    <div className="w-full h-full mt-2">
+    <div id='second' className="w-full h-full mt-2">
       <div className="imageontop">
         <div className="imageandp">
           <img src="../public/illa.jpg" alt="" />

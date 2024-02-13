@@ -3,7 +3,7 @@ import colora from './colora.mp4';
 import Navbar from './Navbar';
 const LandingPage = () => {
   return (
-    <div className="landigpage w-full h-full relative">
+    <div id='first' className="landigpage w-full h-full relative">
       <div className="video">
         <video src={colora} autoPlay loop muted></video>
       </div>

@@ -48,7 +48,7 @@ export default function Footer1() {
                     <div className='flex flex-row gap-2  font-thin  text-sm'>
                         <div><p className='font-sans text-sm md:hidden lg:hidden'>© RwandaVentures.com 2024</p></div>
                         <p className='font-sans text-sm flex flex-row'>Back to top  </p>
-                        <FaArrowUp className='font-sans text-sm mb-0.5 lg:mb-0' />
+                        <a href="#first"> <FaArrowUp className='font-sans text-sm mb-0.5 lg:mb-0' /></a>
                     </div>
                 </div>
             </div>

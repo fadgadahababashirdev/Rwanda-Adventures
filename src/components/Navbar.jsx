@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+
+import { Link } from 'react-scroll';
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
@@ -17,12 +18,17 @@ const Navbar = () => {
             smooth={true}
             offset={-70}
             duration={1000}
+            
           >
-            <li className="text-serif text-white font-extrabold mx-5">Home</li>
+            <li className="text-serif text-white font-extrabold mx-5"><a href="#first">Home</a></li>
           </Link>
-          <li className="text-serif text-white font-extrabold mx-5">lorem</li>{' '}
-          <li className="text-serif text-white font-extrabold mx-5">lorem</li>{' '}
-          <li className="text-serif text-white font-extrabold mx-5">lorem</li>{' '}
+          <li className="text-serif text-white font-extrabold mx-5 places" style={{ scrollBehavior: 'smooth' }}>
+  <a href="#five">Places</a>
+</li>
+
+          <li className="text-serif text-white font-extrabold mx-5"><a href="#second">Services</a></li>{' '}
+          <li className="text-serif text-white font-extrabold mx-5"><a href="#Team">Team</a></li>{' '}
+          <li className="text-serif text-white font-extrabold mx-5"><a href="#contact">Contact Us</a></li>{' '}
           <Link to="/Login">
             <li className="text-serif text-white font-extrabold mx-5">Login</li>
           </Link>
@@ -48,7 +54,7 @@ const Navbar = () => {
             offset={-70}
             duration={1000}
           >
-           <Link to ="/">Home</Link>
+           Home
           </Link>
           <li className="text-serif ">lorem</li>{' '}
           <li className="text-serif ">lorem</li>{' '}
