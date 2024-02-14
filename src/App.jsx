@@ -5,6 +5,7 @@ import Register from './components/Register';
 import Mainpage from './components/mainpage';
 import { Context } from './components/TouristContext';
 import Services from './kevin/Services';
+import { ToastContainer } from 'react-toastify';
 const App = () => {
   const images = [
     {
@@ -74,6 +75,7 @@ const App = () => {
   ];
     return (
       <Context.Provider value={{ images }}>
+        <ToastContainer/>
       <Router>
         <Routes>
           <Route path="/" element={<Mainpage />} />

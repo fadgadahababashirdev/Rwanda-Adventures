@@ -1,6 +1,7 @@
 import React from 'react';
-import colora from './colora.mp4';
+import colora from './beautifull.mp4';
 import Navbar from './Navbar';
+
 const LandingPage = () => {
   return (
     <div id='first' className="landigpage w-full h-full relative">
@@ -13,18 +14,18 @@ const LandingPage = () => {
       <div className="color w-full h-screen bg-black absolute top-0 opacity-45"></div>
       <div className="content w-full h-full absolute top-0 flex justify-center items-center mt">
         <div className="text center centerContent">
-          <p className="text-white text-center">
+          <h1 className="text-white text-center">
             Rwanda the country of a thousand hills
-          </p>
+          </h1>
           <div className="h1andp block ">
-            <h1 className="text-white text-center text-2xl ">
+            <h2 className="text-white text-center text-4xl ">
               The safesty Country in the world to
-            </h1>
+            </h2>
             <br></br>
-            <h1 className="text text-white text-center text-2xl honetwo">
+            <h3 className="text text-white text-center text-4xl honetwo">
               {' '}
               explore and enjoy holidays
-            </h1>
+            </h3>
           </div>
         </div>
       </div>

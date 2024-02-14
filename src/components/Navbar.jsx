@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-import { Link } from 'react-scroll';
+import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
@@ -12,16 +12,10 @@ const Navbar = () => {
           Rwanda Adventures
         </h1>
         <ul className="flex">
-          <Link
-            to="LandingPage"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={1000}
             
-          >
+          
             <li className="text-serif text-white font-extrabold mx-5"><a href="#first">Home</a></li>
-          </Link>
+        
           <li className="text-serif text-white font-extrabold mx-5 places" style={{ scrollBehavior: 'smooth' }}>
   <a href="#five">Places</a>
 </li>
