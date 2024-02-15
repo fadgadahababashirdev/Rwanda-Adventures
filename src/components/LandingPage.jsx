@@ -1,8 +1,22 @@
 import React from 'react';
 import colora from './beautifull.mp4';
 import Navbar from './Navbar';
-
+import {useState,useEffect} from 'react'
 const LandingPage = () => {
+  const [scroll,setScroll] =useState(false)
+  useEffect(()=>{
+    const handleScroll = ()=>{
+      if(window.scrollY>1){
+        setScroll(true)
+      }else{
+        setScroll(false)
+      }
+    }
+    window.addEventListener(scroll , handleScroll)
+    return()=>{
+      window.removeEventListener(scroll,handleScroll)
+    }
+  },[])
   return (
     <div id='first' className="landigpage w-full h-full relative">
       <div className="video">

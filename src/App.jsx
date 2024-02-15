@@ -1,11 +1,15 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoginPage from './components/LoginPage';
 import Register from './components/Register';
 import Mainpage from './components/mainpage';
 import { Context } from './components/TouristContext';
 import Services from './kevin/Services';
 import { ToastContainer } from 'react-toastify';
+import Aside from './components/Dashboard/Aside';
+import Alltb from './components/tables/Alltb';
+import Userstable from './components/tables/Userstable';
+
 const App = () => {
   const images = [
     {
@@ -73,18 +77,21 @@ const App = () => {
       id: '9',
     },
   ];
-    return (
-      <Context.Provider value={{ images }}>
-        <ToastContainer/>
+  return (
+    <Context.Provider value={{ images }}>
+      <ToastContainer />
       <Router>
         <Routes>
           <Route path="/" element={<Mainpage />} />
           <Route path="/Login" element={<LoginPage />} />
           <Route path="/Register" element={<Register />} />
           <Route path="/Services" element={<Services />} />
+          <Route path="/dashboard" element={<Aside />} />
+          <Route path="/tables" element={<Alltb />} />
+          <Route path="/userstable" element={<Userstable />} />
         </Routes>
       </Router>
-        </Context.Provider>
-     );
-  };
-  export default App;
+    </Context.Provider>
+  );
+};
+export default App;

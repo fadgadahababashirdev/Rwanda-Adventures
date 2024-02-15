@@ -22,7 +22,7 @@ const loginShema = yup.object().shape({
       const url = "http://localhost:2121/Login" 
       const response = await axios.post(url,data)
       sessionStorage.setItem("token" , response.data)
-      navigate("/Services")
+      navigate("/Dashboard")
       console.log(response)
     } catch (error) {
       alert("invalid credentials")
