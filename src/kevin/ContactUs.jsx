@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 
 export default function ContactUs() {
     const [formData, setFormData] = useState({
@@ -58,7 +57,7 @@ export default function ContactUs() {
                 // Simulate a successful API call with a delay
                 setTimeout(() => {
                     alert('Thank you for reaching out');
-                    // Redirecting  the user after successful submission
+                    // Redirecting the user after successful submission
                     // navigate("/success");
                 }, 1000)
             } catch (err) {
@@ -69,32 +68,36 @@ export default function ContactUs() {
 
     return (
         <div id='contact' className="mt-12">
-            <form className="flex flex-col border-2 gap-2 justify-evenly w-2/2 mx-5 text-center hover:border-blue-500 lg:w-1/2 h-72 lg:ml-10 bg-blue-200" onSubmit={handleSubmit}>
-                <h1 className="text-xl text-center font-sans sm">Contact Us</h1>
-                <div className=" gap-2 mx-5 justify-center">
-                    <input
-                        type="text"
-                        placeholder="First Name"
-                        className="text-center mx-2 px-3 py-2 rounded"
-                        name="firstName"
-                        value={formData.firstName}
-                        onChange={handleChange}
-                    />
-                    <input
-                        type="text"
-                        placeholder="Last Name"
-                        className="text-center mx-2  px-3 py-2 mt-2 rounded"
-                        name="lastName"
-                        value={formData.lastName}
-                        onChange={handleChange}
-                    />
+            <form className="flex flex-col gap-3  w-full justify-start max-w-lg mx-auto p-6 border rounded-lg shadow-lg bg-gray-50" onSubmit={handleSubmit}>
+                <h1 className="text-3xl font-semibold mb-4 text-center">Contact Us</h1>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <input
+                            type="text"
+                            placeholder="First Name"
+                            className="px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                            name="firstName"
+                            value={formData.firstName}
+                            onChange={handleChange}
+                        />
+                        {errors.firstName && <div className="text-red-500">{errors.firstName}</div>}
+                    </div>
+                    <div>
+                        <input
+                            type="text"
+                            placeholder="Last Name"
+                            className="px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                            name="lastName"
+                            value={formData.lastName}
+                            onChange={handleChange}
+                        />
+                        {errors.lastName && <div className="text-red-500">{errors.lastName}</div>}
+                    </div>
                 </div>
-                {errors.firstName && <div className="text-red-500">{errors.firstName}</div>}
-                {errors.lastName && <div className="text-red-500">{errors.lastName}</div>}
                 <input
                     type="email"
                     placeholder="Enter your email"
-                    className={`text-center mx-5 ${errors.email ? 'error' : ''}`}
+                    className={`px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500 ${errors.email ? 'border-red-500' : ''}`}
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
@@ -103,22 +106,21 @@ export default function ContactUs() {
                 <input
                     type="tel"
                     placeholder="Enter your Phone number"
-                    className={`text-center mx-5 ${errors.phoneNumber ? 'error' : ''}`}
+                    className={`px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500 ${errors.phoneNumber ? 'border-red-500' : ''}`}
                     name="phoneNumber"
                     value={formData.phoneNumber}
                     onChange={handleChange}
                 />
                 {errors.phoneNumber && <div className="text-red-500">{errors.phoneNumber}</div>}
-                <input
-                    type="text"
+                <textarea
                     placeholder="Your Message"
-                    className={`text-center mx-5 h-1/2 ${errors.message ? 'error' : ''}`}
+                    className={`px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500 ${errors.message ? 'border-red-500' : ''}`}
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                 />
                 {errors.message && <div className="text-red-500">{errors.message}</div>}
-                <button className="bg-blue-300 w-2/12 rounded-lg hover:bg-blue-400 mb-2 " type="submit">Submit</button>
+                <button className="bg-blue-500 text-white font-semibold py-2 rounded-lg hover:bg-blue-600 transition duration-300" type="submit">Submit</button>
             </form>
         </div>
 

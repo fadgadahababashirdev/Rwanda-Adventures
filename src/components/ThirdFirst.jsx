@@ -35,18 +35,44 @@ export default () => {
         onSlideChange={() => console.log('slide change')}
         autoplay={{ delay: 3000 }}
         breakpoints={{
-          460: {
+          1280:{
+            slidesPerView: 3.5,
+            spaceBetween: 30,
+        },
+        1024:{
+            slidesPerView: 2.5,
+            spaceBetween: 30,
+        },
+        
+        768: {
             slidesPerView: 2,
-          },
-          673: {
-            slidesPerView: 3,
-          },
-          1024: {
-            slidesPerView: 4,
-          },
-          1633: {
-            slidesPerView: 8,
-          }
+            spaceBetween: 30,
+            slideHeight:50,
+        },
+        720: {
+            slidesPerView: 2,
+        },
+        640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        540:{
+            slidesPerView: 2,
+            spaceBetween: 10, 
+        },
+        400:{
+            slidesPerView: 1,
+            spaceBetween: 2, 
+        },
+        320: {
+            slidesPerView: 1,
+        },
+        280:{
+            slidesPerView: 1,  
+        },
+        250:{
+            slidesPerView: 1,  
+        }
         }}
       >
         {images.map((image) => {

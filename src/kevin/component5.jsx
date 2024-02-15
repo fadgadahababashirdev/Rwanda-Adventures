@@ -1,14 +1,14 @@
 import { FaArrowRight } from "react-icons/fa";
-import React from "react";
-import myImage from '../images/savannah-8079856_1280.jpg';
+import { CiHeart } from "react-icons/ci";
+import React, { useState } from "react";
 import myImage1 from '../images/Masterclass__1200x675_hero.jpg';
 import myImage2 from '../images/Finland_Aurora_dome_Jeris_Antti_Pietikäinen.12422788202013340987_optimized.jpg';
 import myImage3 from '../images/Riisitunturi_by_Julia_Kivela-8894_optimized.jpg';
 import myImage4 from '../images/Finland_Lapland_winter_Sunset snowshoeing_Levi_optimized.jpg';
 import myImage5 from '../images/Savoy-Interior-7.jpeg';
-import myImage6 from '../images/___Lapland_People_Sami_Mikko Ryhänen.12414660736871135524.jpg'
-import { CiHeart } from "react-icons/ci";
-import '../components/places.css'
+import myImage6 from '../images/___Lapland_People_Sami_Mikko Ryhänen.12414660736871135524.jpg';
+import '../components/places.css';
+
 const page = {
     heading: "Get to know Rwanda",
     text: "Explore all articles",
@@ -16,10 +16,37 @@ const page = {
 };
 
 export default function Component5() {
-    return (
+    const [likes, setLikes] = useState(Array(6).fill(0)); // Initialize likes state with 0 for each image
+    const [liked, setLiked] = useState(Array(6).fill(false)); // Initialize liked state with false for each image
 
-        <div id='five' className="py-10 bg-slate-100 sm:h-full  mb-20">
-            <div className=" bg-slate-100 h-full sm:h-full mx-10 ">
+    const handleLikeClick = (index) => {
+        const newLikes = [...likes];
+        const newLiked = [...liked];
+        
+        if (newLiked[index]) {
+            newLikes[index] -= 1; // Decrease like count
+        } else {
+            newLikes[index] += 1; // Increase like count
+        }
+        
+        newLiked[index] = !newLiked[index]; // Toggle like status
+        setLikes(newLikes);
+        setLiked(newLiked);
+    };
+
+    const formatLikesCount = (count) => {
+        if (count === 0) {
+            return ""; // Display no number if there are no likes
+        } else if (count >= 1000) {
+            return (count / 1000).toFixed(1) + "k";
+        } else {
+            return count;
+        }
+    };
+
+    return (
+        <div id='five' className="py-10 bg-slate-100 sm:h-full mb-20">
+            <div className="bg-slate-100 h-full mx-10 sm:flex flex-col gap-5">
                 <div className="flex flex-col sm:flex-row justify-between">
                     <div className="w-full sm:w-1/2 sm:flex-col">
                         <p className="border-b border-gray-500 w-full sm:w-1/2 pt-4 pb-4"></p>
@@ -33,74 +60,25 @@ export default function Component5() {
                         <p className="pt-10 text-lg">{page.text1}</p>
                     </div>
                 </div>
-                <div className="grid grid-cols-2  mb-24  md:grid-cols-2 lg:grid-cols-3  h-96   gap-10 lg:mx-50  pt-10">
-                    <div className=" h-52  flex flex-col justify-center items-cente ">
-                        <div className="relative">
-                            <img src={myImage1} alt="Download (4)" className="h-full object-cover rounded-md transition-transform transform hover:scale-110 p-4" />
-                            <div className="absolute bottom-0 right-0">
-                                <CiHeart className="bg-black text-white"/>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:mx-50 pt-10">
+                    {[myImage1, myImage2, myImage3, myImage4, myImage5, myImage6].map((image, index) => (
+                        <div key={index} className="flex flex-col justify-center items-center">
+                            <div className="relative">
+                                <img src={image} alt="Download" className="h-52 object-cover rounded-md transition-transform transform hover:scale-110 p-4" />
+                                <div className="absolute bottom-0 right-0 flex flex-col items-center ml-10 md:flex-row lg:flex-row">
+                                    <CiHeart
+                                        className={`text-${liked[index] ? 'red-400' : 'black'} text-xl hover:text-red-400 cursor-pointer mt-3`}
+                                        onClick={() => handleLikeClick(index)}
+                                    />
+                                    <p className={`text-lg text-${liked[index] ? 'red-400' : 'black'}`}>
+                                        {formatLikesCount(likes[index]) || '\u00A0'}
+                                    </p> {/* Use Unicode no-break space as a placeholder */}
+                                </div>
                             </div>
+                            <p className="text-center text-lg">Happiness has been defined in multiple ways...</p>
                         </div>
-                        <p className="text-center bg-white text-lg">Happiness has been defined in multiple ways...</p>
-
-                 </div>
-                 
-                 <div className=" h-52  flex flex-col justify-center items-cente  ">
-                        <div className="relative">
-                            <img src={myImage2} alt="Download (4)" className="h-full object-cover rounded-md transition-transform transform hover:scale-110 p-4" />
-                            <div className="absolute bottom-0 right-0">
-                                <CiHeart className="bg-black text-white"/>
-                            </div>
-                        </div>
-                        <p className="text-center bg-white text-lg">Happiness has been defined in multiple ways...</p>
-
-                 </div>
-                 <div className=" h-52  flex flex-col justify-center items-cente  ">
-                        <div className="relative">
-                            <img src={myImage2} alt="Download (4)" className="h-full object-cover rounded-md transition-transform transform hover:scale-110 p-4" />
-                            <div className="absolute bottom-0 right-0">
-                                <CiHeart className="bg-black text-white"/>
-                            </div>
-                        </div>
-                        <p className="text-center bg-white text-lg">Happiness has been defined in multiple ways...</p>
-
-                 </div>
-                
-                
-        
-                 <div className="  h-52  hidden md:flex flex-col  lg:flex-col justify-center items-center ">
-                        <div className="relative">
-                            <img src={myImage6} alt="Download (4)" className="h-full object-cover rounded-md transition-transform transform hover:scale-110 p-4" />
-                            <div className="absolute bottom-0 right-0">
-                                <CiHeart className="bg-black text-white"/>
-                            </div>
-                        </div>
-                        <p className="text-center bg-white text-lg">Happiness has been defined in multiple ways...</p>
-
-                 </div>
-                
-                 <div className="  h-52  hidden md:flex flex-col  lg:flex-col justify-center items-center ">
-                        <div className="relative">
-                            <img src={myImage6} alt="Download (4)" className="h-full object-cover rounded-md transition-transform transform hover:scale-110 p-4" />
-                            <div className="absolute bottom-0 right-0">
-                                <CiHeart className="bg-black text-white"/>
-                            </div>
-                        </div>
-                        <p className="text-center bg-white text-lg">Happiness has been defined in multiple ways...</p>
-
-                 </div>
-                    <div className=" h-52  flex flex-col justify-center items-cente  md:">
-                        <div className="relative">
-                            <img src={myImage1} alt="Download (4)" className="h-full object-cover rounded-md transition-transform transform hover:scale-110 p-4" />
-                            <div className="absolute bottom-0 right-0">
-                                <CiHeart className="bg-black text-white"/>
-                            </div>
-                        </div>
-                        <p className="text-center bg-white text-lg">Happiness has been defined in multiple ways...</p>
-
-                 </div>
+                    ))}
                 </div>
-
             </div>
         </div>
     );

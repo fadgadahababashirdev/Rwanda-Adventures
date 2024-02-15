@@ -2,11 +2,19 @@ import React from "react";
 import myImage1 from '../images/tea-plantation-7344892_1280.jpg';
 import myImage2 from '../images/savannah-8079856_1280.jpg';
 import myImage3 from '../images/download (2).jpeg';
+import myImage4 from '../images/Volcano-Hiking-Rwanda.jpg';
+import myImage5 from '../images/camping-4303357_1280.jpg';
+import myImage6 from '../images/kingfisher-6374507_1280.jpg';
+import myImage7 from '../images/lake-balaton-1608516_1280.jpg';
+import myImage8 from '../images/mount-kilimanjaro-7287230_1280.jpg';
+import myImage9 from '../images/elephant-6824511_1280.jpg';
+import myImage10 from '../images/bridge-2203661_1280.jpg';
+
 const Page = [
     {
         title: "Virunga National Park",
         description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam laudantium illo optio architecto voluptatum, possimus recusandae suscipit. Minus et quisquam repudiandae magni, iure rerum quo ipsam maiores, sunt beatae porro.",
-        image: myImage3
+        image: myImage8
     },
     
     {
@@ -22,11 +30,40 @@ const Page = [
     },
     
 ];
+const activities = [
+    {
+    title: "Hiking",
+image: myImage4,
+    },
+    {
+    title: "Camping",
+    image: myImage5,
+},
+{
+    title: "Bird Watching",
+    image: myImage6,
+},
+{
+    title: "Game Drive",
+    image: myImage9,
+},
+{
+    title: "Boat Cruise",
+    image: myImage7,
+},
+{
+    title: "Canopy Walk",
+    image: myImage10,
+},  
+];
 
 export default function ServicePage() {
     return (
-        <div className="flex flex-col gap-5 items-center">
-            <h1 className="text-center text-4xl mt-10">Our Services</h1>
+    <div className="mx-10" >
+        
+          <div className="flex flex-col gap-5 items-center">
+          <h1 className="text-center text-4xl mt-10 font-semibold">Our Services</h1>
+          <h3 className=" text-3xl mt-2">Guided Tours</h3>
             <div className="flex flex-col md:flex-row gap-2 mx-2 items-center">
                 <div className="flex flex-col items-center"> 
                     <h1 className="text-2xl">{Page[0].title}</h1>
@@ -61,5 +98,61 @@ export default function ServicePage() {
                 </div>
             </div>
         </div>
+        <h3 className="text-center text-3xl mt-10 mb-10 ">Other activities </h3>
+        <div className=" flex flex-col md:grid grid-cols-3 lg:grid-cols-3 justify-evenly  gap-10 ">
+            <div className="flex flex-col md:flex-row gap-2 mx-2 items-center  ">
+                <div className="flex flex-col items-center"> 
+                    <h1 className="text-2xl">{activities[0].title}</h1>
+                    <div className="h-72 w-72 md:w-auto overflow-hidden rounded-md">
+                        <img src={activities[0].image} alt="Guided Tour" className="h-full w-full object-cover transition-transform transform hover:scale-110 " />
+                    </div>
+                </div>
+               
+            </div>
+            <div className="flex flex-col md:flex-row gap-2 mx-2 items-center">
+                <div className="flex flex-col items-center"> 
+                    <h1 className="text-2xl">{activities[1].title}</h1>
+                    <div className="h-72 w-72 md:w-auto overflow-hidden rounded-md">
+                        <img src={activities[1].image} alt="Guided Tour" className="h-full w-full object-cover transition-transform transform hover:scale-110 " />
+                    </div>
+                </div>
+               
+            </div>
+            <div className="flex flex-col md:flex-row gap-2 mx-2 items-center">
+                <div className="flex flex-col items-center"> 
+                    <h1 className="text-2xl">{activities[2].title}</h1>
+                    <div className="h-72 w-72 md:w-auto overflow-hidden rounded-md">
+                        <img src={activities[2].image} alt="Guided Tour" className="h-full w-full object-cover transition-transform transform hover:scale-110 " />
+                    </div>
+                </div>
+            </div>
+            <div className="flex flex-col md:flex-row gap-2 mx-2 items-center">
+                <div className="flex flex-col items-center"> 
+                    <h1 className="text-2xl">{activities[3].title}</h1>
+                    <div className="h-72 w-72 md:w-auto overflow-hidden rounded-md">
+                        <img src={activities[3].image} alt="Guided Tour" className="h-full w-full object-cover transition-transform transform hover:scale-110 " />
+                    </div>
+                </div>
+            </div>
+            <div className="flex flex-col md:flex-row gap-2 mx-2 items-center">
+                <div className="flex flex-col items-center"> 
+                    <h1 className="text-2xl">{activities[4].title}</h1>
+                    <div className="h-72 w-72 md:w-auto overflow-hidden rounded-md">
+                        <img src={activities[4].image} alt="Guided Tour" className="h-full w-full object-cover transition-transform transform hover:scale-110 " />
+                    </div>
+                </div>
+            </div>
+            <div className="flex flex-col md:flex-row gap-2 mx-2 items-center">
+                <div className="flex flex-col items-center"> 
+                    <h1 className="text-2xl">{activities[5].title}</h1>
+                    <div className="h-72 w-72 md:w-auto overflow-hidden rounded-md">
+                        <img src={activities[5].image} alt="Guided Tour" className="h-full w-full object-cover transition-transform transform hover:scale-110 " />
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+      
     );
 }
