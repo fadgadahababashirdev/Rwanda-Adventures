@@ -62,65 +62,65 @@ export default () => {
     };
     const images = [
         {
-            img: '../public/forest.jpg',
-            Name: 'Member1',
+            img: '../public/henry.png',
+            Name: 'Ngabo John',
+            title: 'Founder and CEO',
+            description:
+                'lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum',
+        },
+        {
+            img: '../public/images (4).jpeg',
+            Name: 'Gisubizo Petience',
+            title: 'Cheif executive officer',
+            description:
+                'lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum',
+        },
+        {
+            img: '../public/portrait-4568762_1280.jpg',
+            Name: 'Habimana Fancis',
             title: 'lorem Ipsum',
             description:
                 'lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum',
         },
         {
-            img: '../public/frog.jpg',
-            Name: 'Member1',
-            title: 'Member1',
+            img: '../public/man-2442565_1280.jpg',
+            Name: 'Muhoza Patrick',
+            title: ' CEO',
             description:
                 'lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum',
         },
         {
-            img: '../public/gollira.jpg',
-            Name: 'Member2',
-            title: 'lorem Ipsum',
+            img: '../public/smile-2072907_1280.jpg',
+            Name: 'Mugeni Jeanne',
+            title: 'Deputy CEO',
             description:
                 'lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum',
         },
         {
-            img: '../public/ima.jpg',
-            Name: 'Member1',
-            title: 'lorem Ipsum',
+            img: '../public/woman-657753_1280.jpg',
+            Name: 'Mbabazi Faith',
+            title: 'IT Manager',
             description:
                 'lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum',
         },
         {
-            img: '../public/iman.jpg',
-            Name: 'Member3',
-            title: 'lorem Ipsum',
+            img: '../public/henry.png',
+            Name: 'Manzi Henry',
+            title: 'Head of Marketing',
             description:
                 'lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum',
         },
         {
-            img: '../public/img.jpg',
-            Name: 'Member4',
-            title: 'lorem Ipsum',
+            img: '../public/man-2442565_1280.jpg',
+            Name: 'Kagabo Fabrice',
+            title: 'Head of Operations',
             description:
                 'lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum',
         },
         {
-            img: '../public/monkey.jpg',
-            Name: 'Member5',
-            title: 'lorem Ipsum',
-            description:
-                'lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum',
-        },
-        {
-            img: '../public/mountain.jpg',
-            Name: 'Member6',
-            title: 'lorem Ipsum',
-            description:
-                'lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum',
-        },
-        {
-            img: '../public/waterfalls.jpg',
-            Name: 'Member7',
-            title: 'lorem Ipsum',
+            img: '../public/woman-657753_1280.jpg',
+            Name: 'Mukamana Alice',
+            title: 'Head of Finance',
             description:
                 'lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum',
         },

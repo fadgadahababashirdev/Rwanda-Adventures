@@ -1,12 +1,12 @@
 import { FaArrowRight } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
 import React, { useState } from "react";
-import myImage1 from '../images/Masterclass__1200x675_hero.jpg';
-import myImage2 from '../images/Finland_Aurora_dome_Jeris_Antti_Pietikäinen.12422788202013340987_optimized.jpg';
-import myImage3 from '../images/Riisitunturi_by_Julia_Kivela-8894_optimized.jpg';
-import myImage4 from '../images/Finland_Lapland_winter_Sunset snowshoeing_Levi_optimized.jpg';
-import myImage5 from '../images/Savoy-Interior-7.jpeg';
-import myImage6 from '../images/___Lapland_People_Sami_Mikko Ryhänen.12414660736871135524.jpg';
+import myImage1 from '../images/mount-kilimanjaro-7287230_1280.jpg';
+import myImage2 from '../images/tea-plantation-7344892_1280.jpg';
+import myImage3 from '../images/lake-balaton-1608516_1280.jpg';
+import myImage4 from '../images/kingfisher-6374507_1280.jpg';
+import myImage5 from '../images/trees-975091_1280.jpg';
+import myImage6 from '../images/elephant-6824511_1280.jpg';
 import '../components/places.css';
 
 const page = {
@@ -53,7 +53,7 @@ export default function Component5() {
                         <h1 className="text-xl font-bold pt-4">{page.heading}</h1>
                         <div className="flex flex-row gap-2">
                             <p className="text-green-700 font-semibold text-sm">{page.text}</p>
-                            <FaArrowRight style={{ width: '64px' }} className="pt-2 text-green-700 h-4" />
+                            <FaArrowRight className="ml-2 w-5 h-5 mt-3 text-green-700" />
                         </div>
                     </div>
                     <div>
