@@ -9,6 +9,7 @@ import { ToastContainer } from 'react-toastify';
 import Aside from './components/Dashboard/Aside';
 import Alltb from './components/tables/Alltb';
 import Userstable from './components/tables/Userstable';
+import Booking from './kevin/Booking';
 
 const App = () => {
   const images = [
@@ -89,6 +90,7 @@ const App = () => {
           <Route path="/dashboard" element={<Aside />} />
           <Route path="/tables" element={<Alltb />} />
           <Route path="/userstable" element={<Userstable />} />
+          <Route path="/booking" element={<Booking />} />
         </Routes>
       </Router>
     </Context.Provider>

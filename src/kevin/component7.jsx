@@ -62,7 +62,7 @@ export default () => {
     };
     const images = [
         {
-            img: '../public/henry.png',
+            img: '../public/portrait-4568762_1280.jpg',
             Name: 'Ngabo John',
             title: 'Founder and CEO',
             description:
@@ -157,7 +157,7 @@ export default () => {
                 {images.map((image) => {
                     return (
                         <SwiperSlide className="mt-5">
-                            <img src={image.img} alt="" className="rounded-t-xl"  style={{width: '100vh', height: '50vh'}}/>
+                            <img src={image.img} alt="" className="rounded-t-xl"  style={{width: '100vh', height: '50vh',objectFit:'contain'}}/>
                             <h3 className="ml-1">{image.Name}</h3>
                             <h4 className="ml-1">{image.title}</h4>
                             <p className="font-sans text-sm ml-1">{image.description}</p>

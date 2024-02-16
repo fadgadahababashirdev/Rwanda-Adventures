@@ -5,7 +5,7 @@ import Servicepage from '../kevin/Servicepage'
 export default function Services() {
     return (
         <div>
-            <Navbar/>
+            <Navbar className="z-10"/>
             <Servicepage/>
              <Footer/>         
         </div>

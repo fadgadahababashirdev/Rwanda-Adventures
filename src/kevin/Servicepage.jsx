@@ -9,6 +9,7 @@ import myImage7 from '../images/lake-balaton-1608516_1280.jpg';
 import myImage8 from '../images/mount-kilimanjaro-7287230_1280.jpg';
 import myImage9 from '../images/elephant-6824511_1280.jpg';
 import myImage10 from '../images/bridge-2203661_1280.jpg';
+import { FaArrowRight } from "react-icons/fa";
 
 const Page = [
     {
@@ -60,10 +61,14 @@ image: myImage4,
 export default function ServicePage() {
     return (
     <div className="mx-10" >
-        
-          <div className="flex flex-col gap-5 items-center">
-          <h1 className="text-center text-4xl mt-10 font-semibold">Our Services</h1>
-          <h3 className=" text-3xl mt-2">Guided Tours</h3>
+        <div>
+        <h1 className="text-center text-3xl  font-semibold pt-10">Our Services</h1>
+        <div className="flex flex-row justify-between">
+        <h3 className=" text-3xl mt-2">Tours</h3>
+        <p className="border-b border-gray-500 w-full sm:w-1/2 pt-4 pb-4"></p>
+        </div>
+          
+        <div className="flex flex-col gap-5 items-center">
             <div className="flex flex-col md:flex-row gap-2 mx-2 items-center">
                 <div className="flex flex-col items-center"> 
                     <h1 className="text-2xl">{Page[0].title}</h1>
@@ -98,7 +103,14 @@ export default function ServicePage() {
                 </div>
             </div>
         </div>
-        <h3 className="text-center text-3xl mt-10 mb-10 ">Other activities </h3>
+        <div className="flex  flex-col md:flex-row justify-between py-10">
+        <h3 className=" text-xl mt-2">Other Activities</h3>
+        <div className="">
+        <p className="border-b border-gray-500 w-1/2 sm:w-1/2 pt-4 pb-5"></p>
+        <p className="text-lg">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem, fugiat non rerum vel ut vitae nobis. Eligendi odio libero delectus quo quis obcaecati quibusdam non consequuntur, ipsam in. Dolore, nam!</p>
+        </div>
+       
+        </div>
         <div className=" flex flex-col md:grid grid-cols-3 lg:grid-cols-3 justify-evenly  gap-10 ">
             <div className="flex flex-col md:flex-row gap-2 mx-2 items-center  ">
                 <div className="flex flex-col items-center"> 
@@ -152,6 +164,11 @@ export default function ServicePage() {
             </div>
             
         </div>
+        </div>
+        <button className="bg-green-700 hover:bg-green-900 text-white px-8 py-2 rounded-md mt-4 flex items-center">
+                        Book Here
+                        <FaArrowRight className="ml-2 w-5 h-5" />
+                    </button> 
     </div>
       
     );
