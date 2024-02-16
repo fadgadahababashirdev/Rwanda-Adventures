@@ -10,7 +10,7 @@ import myImage8 from '../images/mount-kilimanjaro-7287230_1280.jpg';
 import myImage9 from '../images/elephant-6824511_1280.jpg';
 import myImage10 from '../images/bridge-2203661_1280.jpg';
 import { FaArrowRight } from "react-icons/fa";
-
+import { useNavigate } from 'react-router-dom';
 const Page = [
     {
         title: "Virunga National Park",
@@ -59,6 +59,25 @@ image: myImage4,
 ];
 
 export default function ServicePage() {
+
+    const ServiceButton = () => {
+        const navigate = useNavigate();
+    
+        const handleClick = () => {
+            navigate('/booking');
+        };
+    
+        return (
+            <div>
+                <button
+                  
+                    onClick={handleClick}
+                >
+                   Book Here
+                </button>
+            </div>
+        );
+    };
     return (
     <div className="mx-10" >
         <div>
@@ -166,8 +185,9 @@ export default function ServicePage() {
         </div>
         </div>
         <button className="bg-green-700 hover:bg-green-900 text-white px-8 py-2 rounded-md mt-4 flex items-center">
-                        Book Here
+                    <ServiceButton />   
                         <FaArrowRight className="ml-2 w-5 h-5" />
+
                     </button> 
     </div>
       
