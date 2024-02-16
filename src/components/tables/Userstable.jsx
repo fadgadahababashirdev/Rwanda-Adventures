@@ -54,6 +54,23 @@ const Aside = () => {
     console.log(selected);
     handleData();
   }, []);
+
+  const handleDelete= async(id)=>{
+    try {
+      const url = `http://localhost:2121/delete/${id}`
+      const response = await axios.delete(url)
+      console.log(response)
+      confirm("Do you really want to delete this user?, ok")
+      alert("user deleted")
+      window.location.reload("/userstable")
+      window.location.assign("/userstable")
+      
+      
+    } catch (error) {
+      alert("The user could not be deleted")
+      console.log(error)
+    }
+  }
   return (
     <div className="flex bg-slate-100 w-full pr-5 relative">
       <div
@@ -183,7 +200,9 @@ const Aside = () => {
                     >
                       <MdEdit />
                     </button>
-                    <button className="ml-2 text-red-600 hover:text-red-900 focus:outline-none focus:underline text-2xl">
+                    <button className="ml-2 text-red-600 hover:text-red-900 focus:outline-none focus:underline text-2xl"
+                    onClick={()=>handleDelete(user._id)}
+                    >
                       <MdDelete />
                     </button>
                   </td>
