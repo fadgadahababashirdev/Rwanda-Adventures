@@ -10,6 +10,7 @@ import Aside from './components/Dashboard/Aside';
 import Alltb from './components/tables/Alltb';
 import Userstable from './components/tables/Userstable';
 import Booking from './kevin/Booking';
+import TouristExperience from "./components/TouristExperience"
 
 const App = () => {
   const images = [
@@ -91,6 +92,7 @@ const App = () => {
           <Route path="/tables" element={<Alltb />} />
           <Route path="/userstable" element={<Userstable />} />
           <Route path="/booking" element={<Booking />} />
+          <Route path="/TouristExperience" element={<TouristExperience/>} />
         </Routes>
       </Router>
     </Context.Provider>

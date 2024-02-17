@@ -1,210 +1,84 @@
 import React from 'react';
+import Navbar from './Navbar';
 
 const TouristExperience = () => {
   return (
-    <div className="w-full h-screen">
-      <div className="z-10 absolute top-0 flex  w-full justify-between px-5 mt-5 containe shadow-xl items-center pb-5">
-        <h1 className="text-sm">Rwanda Ventures</h1>
-        <ul className="flex unordered">
-          <li className="mx-2 text-sm">Rwanda</li>
-          <li className="mx-2 text-sm">Rwanda</li>
-          <li className="mx-2 text-sm">Rwanda</li>
-          <li className="mx-2 text-sm">Rwanda</li>
-          <img
-            src="../public/menu.svg"
-            className="w-5 toggle"
-            onClick={() => setLinks(!links)}
-          />
-        </ul>
-      </div>
-
-      <div className="pt-32">
-        <h2 className="ml-10 text-lg font-sans">
-          Experience testimony with Omar Khana
-        </h2>
-        <div className="mx-10 mt-10 flex w-full h-full">
-          <div>
+    <div className="w-full h-full relative">
+      <div className=" bg-slate-500 hello">
+        <div className="bg-black opacity-50 w-full h-full"></div>
+        <div className="w-full h-full absolute top-0 px-2 py-3 sec1 ">
+          <Navbar />
+          <div className="mt-20 secf">
+            <h2 className="text-white text-2xl font-mono ">
+              <span className="text-green-500 font-extrabold">
+                Meet Omar Khana ,{' '}
+              </span>
+              sharing his experience and overview about his tour through Rwanda
+              with Rwanda Ventures
+            </h2>
             <img
-              src="../public/monkey.jpg"
-              alt=""
-              className="w-96 h-96 rounded-t-sm"
+              src="../public/philip.png"
+              alt="image not found"
+              className="w-full mt-3 rounded-t-sm sec2image"
             />
-
-            <div className="flex justify-between w-96">
-              <div>
-                <h1 className="text-xs">Places Visited</h1>
-
-                <div className="flex">
-                  <p className="text-xs">Nyungwe Forest</p>
-                  <img
-                    src="../public/forest.jpg"
-                    alt=""
-                    className="w-12 h-12  mx-10"
-                  />
-                </div>
-                <div className="flex">
-                  <p className="text-xs">Nyungwe Forest</p>
-                  <img
-                    src="../public/forest.jpg"
-                    alt=""
-                    className="w-12 h-12  mx-10"
-                  />
-                </div>
-                <div className="flex">
-                  <p className="text-xs">Nyungwe Forest</p>
-                  <img
-                    src="../public/forest.jpg"
-                    alt=""
-                    className="w-12 h-12  mx-10"
-                  />
-                </div>
-                <div className="flex">
-                  <p className="text-xs">Nyungwe Forest</p>
-                  <img
-                    src="../public/forest.jpg"
-                    alt=""
-                    className="w-12 h-12  mx-10"
-                  />
-                </div>
-              </div>
-              <div>
-                <h1 className="text-xs">Mostly Liked</h1>
-                <hr className=" bg-red-500" />
-                <div className="flex">
-                  <p className="text-xs">Nyungwe Forest</p>
-                  <img
-                    src="../public/forest.jpg"
-                    alt=""
-                    className="w-12 h-12"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="  p-5 text-sans text-10 w-1/3 ">
-            <h1 className="text-sm text-black font-sans">
-              <span className="text-green-300"> Omar Khan ,</span> Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. In hic ipsa
-              accusantium? Commodi dolore fugiat ipsam minus consequuntur, sunt
-              aliquid quos praesentium natus, nemo provident vitae dolorem
-              tempore quod adipisci quisquam aut ratione sed dolorum eum! Illum
-              a harum, est exercitationem enim unde similique asperiores ut
-              blanditiis, reprehenderit dolorum rerum illo voluptates aliquid
-              sapiente quis officiis inventore aliquam eos facere eligendi quo.
-              Odit vel, dolore fugiat modi atque quibusdam ex voluptatum
-              deleniti sit fuga iusto quos optio ea ipsum asperiores tempore
-              expedita, reprehenderit aliquid totam velit impedit aut voluptate.
-              Voluptates aut, hic at sequi doloremque aperiam quas similique
-              dignissimos vel quidem ipsa corporis ex voluptatibus enim ab
-              cupiditate maiores neque error eius? Minima, alias fuga? Tempora
-              animi adipisci ad sed laboriosam quod labore ullam, voluptatibus
-              cum illo saepe recusandae veritatis sapiente perspiciatis
-              laudantium tenetur? Laudantium, quis. Veritatis deleniti, cum,
-              consequatur neque reiciendis sed explicabo nihil quae voluptates
-              earum odit quisquam assumenda distinctio sint. Sed consequuntur
-              rerum, libero, cumque deserunt molestiae natus, fugit velit minus
-              deleniti vel quia officiis optio officia rem aspernatur!
-              Distinctio quaerat tempore modi ex inventore eligendi, sed dolore
-              beatae reprehenderit voluptates alias a deleniti iure numquam,
-              ipsa voluptatibus ea maxime recusandae minima! Ex alias vero
-              soluta repellendus.
-            </h1>
-          </div>
-          <div className="w-96 h-96">
-            <img src="../public/iman.jpg" alt="" />
-            <div>
-              <h1 className="text-xs text-green-500 text-center mt-5">
-                Omar Khana's Rating on Rwanda Ventures
-              </h1>
-              <p className="text-xs font-mono">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-                ratione maiores cupiditate dolor recusandae velit consequuntur
-                aperiam sequi aspernatur, iure quidem, ea quia vero laboriosam
-                voluptatum, magni aut quisquam. Possimus saepe nam numquam ea
-                deserunt, magni consequuntur id architecto neque. Voluptatum
-                officia ratione molestias facere nesciunt laborum cumque qui
-                eius.
-              </p>
-              <button className=" text-red-400 p-2 rounded-md text-center outline mt-5 text-xs ">
-                Schedule your Tour
-              </button>
-            </div>
           </div>
         </div>
-      </div>
 
-      {/* Guiders part */}
-      <div className="z-10 absolute top-0 flex  w-full justify-between px-5 mt-5 containe shadow-xl items-center pb-5">
-        <h1 className="text-sm">Rwanda Ventures</h1>
-        <ul className="flex unordered">
-          <li className="mx-2 text-sm">Rwanda</li>
-          <li className="mx-2 text-sm">Rwanda</li>
-          <li className="mx-2 text-sm">Rwanda</li>
-          <li className="mx-2 text-sm">Rwanda</li>
-          <img
-            src="../public/menu.svg"
-            className="w-5 toggle"
-            onClick={() => setLinks(!links)}
-          />
-        </ul>
-      </div>
+        <div className="w-full h-full bg-black text-white">
+         {/* Experience part */}
+         <div className='sec2'>
+            <h2 className="text-center pt-5 text-2xl">Experience</h2>
+            <p className="text-xs px-4 mt-6">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Distinctio, maiores! Delectus voluptatibus recusandae eos
+              laboriosam sit, earum officia possimus vero? Nemo fuga voluptatum
+              minima quasi possimus alias, a consequuntur earum dolor vel.
+            </p>
+          </div>
+         {/* End of Experience */}
 
-      <div className="pt-32">
-        <h2 className="ml-10 text-lg font-sans">
-          Overview about Omar khana by{' '}
-          <span className="text-green-300">Niyonshuti Joseph</span>
-        </h2>
-        <div className="mx-10 mt-10 flex w-full h-full">
-          <div>
-            <img
-              src="../public/gollira.jpg"
-              alt=""
-              className="w-96 h-96 rounded-t-sm"
-            />
-            <div className="bg-black text-xs p-2 w-80 ml-1">
-              <p className="text-white text-sans ">Names :Niyonshuti Joseph</p>
-              <p className="text-white text-sans ">
-                Email :niyonshuitiJoseph@gmail.com
-              </p>
-              <p className="text-white text-sans ">
-                Language I:Niyonshuti Joseph
-              </p>
-            </div>
-          </div>
+          {/* images of atourist and description enlighting what he loved most  */}
+          <div className="px-8 mt-3 grid grid-cols-2 gap-3 sec3">
+           <div className='kupe'>
+            <img src="../public/henry.png" alt="image not found" />
+            <p className='text-green-500'>Akagera National park:
 
-          <div className="  p-5 text-sans text-10 w-1/3">
-            <h1 className="text-sm text-black font-serif">
-              <span className="text-green-300"> Niyonshuti Joseph ,</span> Lorem
-              ipsum dolor sit amet consectetur adipisicing elit. In hic ipsa
-              accusantium? Commodi dolore fugiat ipsam minus consequuntur, sunt
-              aliquid quos praesentium natus, nemo provident vitae dolorem
-              tempore quod adipisci quisquam aut ratione sed dolorum eum! Illum
-              a harum, est exercitationem enim unde similique asperiores ut
-              blanditiis, reprehenderit dolorum rerum illo voluptates aliquid
-              sapiente quis officiis inventore aliquam eos facere eligendi quo.
-              Odit vel, dolore fugiat modi atque quibusdam ex voluptatum
-              deleniti sit fuga iusto quos optio ea ipsum asperiores tempore
-              expedita, reprehenderit aliquid totam velit impedit aut voluptate.
-              Voluptates aut, hic at sequi doloremque aperiam quas similique
-              dignissimos vel quidem ipsa corporis ex voluptatibus enim ab
-              cupiditate maiores neque error eius? Minima, alias fuga? Tempora
-              animi adipisci ad sed laboriosam quod labore ullam, voluptatibus
-              cum illo saepe recusandae veritatis sapiente perspiciatis
-              laudantium tenetur? Laudantium, quis. Veritatis deleniti, cum,
-              consequatur neque reiciendis sed explicabo nihil quae voluptates
-              earum odit quisquam assumenda distinctio sint. Sed consequuntur
-              rerum, libero, cumque deserunt molestiae natus, fugit velit minus
-              deleniti vel quia officiis optio officia rem aspernatur!
-              Distinctio quaerat tempore modi ex inventore eligendi, sed dolore
-              beatae reprehenderit voluptates alias a deleniti iure numquam,
-              ipsa voluptatibus ea maxime recusandae minima! Ex alias vero
-              soluta repellendus.
-            </h1>
+              <span className='text-white'> He mostly liked the tall giraffes</span>
+            </p>
+           </div>
+           <div className='kupe'>
+            <img src="../public/henry.png" alt="image not found" />
+            <p className='text-green-500'>Akagera National park:
+
+              <span className='text-white'> He mostly liked the tall giraffes</span>
+            </p>
+           </div>
+           
           </div>
-          <div className="w-96 h-96">
-            <img src="../public/iman.jpg" alt="" />
+          {/* end of tourist images  */}
+
+         {/* Tourist video or images having fun through various locations */}
+         <div className='grid grid-cols-1 mt-12 sec4'>
+           <div>
+            <h1 className='text-center text-2xl'>Akagera National Park</h1>
+             
+           <img src="../public/gollira.jpg" alt="" className='mt-10'/>
+           </div>
           </div>
+          {/* Tourist video or images having fun through variouse locations */}
+
+          {/* Tourist Expectations before the tour */}
+          <div className='grid grid-cols-1  bg-black w-full h-full pt-10'>
+           <div className='px-2 sec4'>
+            <h1 className='text-center text-2xl'><span className='text-green-500 font-extrabold'>Khan's</span>  Expectations before the tour</h1>
+             
+            <span>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam vero porro obcaecati fugit laboriosam hic minus ipsum iste tempore deserunt! Omnis ex animi voluptas libero dicta. Ipsam quaerat odit dolorum aut repellat a perspiciatis nemo saepe ullam nulla, illum accusamus libero laboriosam veniam, excepturi voluptate inventore provident repudiandae harum dolor."</span>
+            <h1 className='text-green-500 font-extrabold mt-3 olo'>Over View from the tour</h1>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias totam id, animi cupiditate explicabo tenetur ullam dolorem natus tempore magnam assumenda accusamus deleniti!</span>
+           </div>
+        
+          </div>
+          {/* Tourist expectations before the tour */}
         </div>
       </div>
     </div>

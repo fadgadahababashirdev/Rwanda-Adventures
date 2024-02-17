@@ -24,8 +24,8 @@ const Aside = () => {
     },
   });
   useEffect(() => {
-    reset(selected)
-  }, [selected])
+    reset(selected);
+  }, [selected]);
 
   const handleUpdate = async (data) => {
     try {
@@ -35,7 +35,7 @@ const Aside = () => {
       alert('updated  successfully');
     } catch (error) {
       console.log('update failed');
-      console.log(error)
+      console.log(error);
     }
   };
 
@@ -55,22 +55,20 @@ const Aside = () => {
     handleData();
   }, []);
 
-  const handleDelete= async(id)=>{
+  const handleDelete = async (id) => {
     try {
-      const url = `http://localhost:2121/delete/${id}`
-      const response = await axios.delete(url)
-      console.log(response)
-      confirm("Do you really want to delete this user?, ok")
-      alert("user deleted")
-      window.location.reload("/userstable")
-      window.location.assign("/userstable")
-      
-      
+      const url = `http://localhost:2121/delete/${id}`;
+      const response = await axios.delete(url);
+      console.log(response);
+      confirm('Do you really want to delete this user?, ok');
+      alert('user deleted');
+      window.location.reload('/userstable');
+      window.location.assign('/userstable');
     } catch (error) {
-      alert("The user could not be deleted")
-      console.log(error)
+      alert('The user could not be deleted');
+      console.log(error);
     }
-  }
+  };
   return (
     <div className="flex bg-slate-100 w-full pr-5 relative">
       <div
@@ -194,14 +192,15 @@ const Aside = () => {
                     <button
                       className="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline text-2xl"
                       onClick={() => {
-                          setSelected(user);
-                          setView(true);
+                        setSelected(user);
+                        setView(true);
                       }}
                     >
                       <MdEdit />
                     </button>
-                    <button className="ml-2 text-red-600 hover:text-red-900 focus:outline-none focus:underline text-2xl"
-                    onClick={()=>handleDelete(user._id)}
+                    <button
+                      className="ml-2 text-red-600 hover:text-red-900 focus:outline-none focus:underline text-2xl"
+                      onClick={() => handleDelete(user._id)}
                     >
                       <MdDelete />
                     </button>
@@ -221,93 +220,98 @@ const Aside = () => {
         }`}
         style={{ height: '100vh', backgroundColor: 'rgba(0,0,0,0.5)' }}
       >
-        {/* form */}
-        <form
-          className="rounded-md shadow-2xl justify-center items-center p-5 bg-blue-100"
-          onSubmit={handleSubmit(handleUpdate)}
-        >
-          <div>
-            <h1 className="text-center font-bold text-2xl">Edit </h1>
+        <div className="relative">
+          {/* form */}
+          <form
+            className="rounded-md shadow-2xl justify-center items-center p-5 bg-blue-100"
+            onSubmit={handleSubmit(handleUpdate)}
+          >
+            <h1 className="text-center t-[-12px] absolute">hello world</h1>
+            <div>
+              <h1 className="text-center font-bold text-2xl">Edit </h1>
 
-            <div className="flexarise">
-              <div className="flexa">
-                <div>
-                  <label htmlFor="username" className=" font-bold text-sm">
-                    Username
-                  </label>
+              <div className="flexarise">
+                <div className="flexa">
+                  <div>
+                    <label htmlFor="username" className=" font-bold text-sm">
+                      Username
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      type="text"
+                      className="outline-none py-1 w-72 rounded-sm px-1 out"
+                      id="username"
+                      {...register('username')}
+                    />
+                    <br />
+                  </div>
                 </div>
 
-                <div>
-                  <input
-                    type="text"
-                    className="outline-none py-1 w-72 rounded-sm px-1 out"
-                    id="username"
-                    {...register('username')}
-                  />
-                  <br />
+                <div className="flexa">
+                  <div>
+                    <label htmlFor="email" className=" font-bold text-sm">
+                      Email
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      type="Email"
+                      className="outline-none py-1 w-72 rounded-sm px-1 out"
+                      id="email"
+                      {...register('email')}
+                    />
+                  </div>
                 </div>
               </div>
 
-              <div className="flexa">
-                <div>
-                  <label htmlFor="email" className=" font-bold text-sm">
-                    Email
-                  </label>
+              <div className="flexarise">
+                <div className="flexa">
+                  <div>
+                    <label htmlFor="phone" className=" font-bold text-sm">
+                      Phone number
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      type="tel"
+                      className="outline-none py-1 w-72 rounded-sm px-1 out"
+                      id="phone"
+                      {...register('phone')}
+                    />
+                    <br />
+                  </div>
                 </div>
 
-                <div>
-                  <input
-                    type="Email"
-                    className="outline-none py-1 w-72 rounded-sm px-1 out"
-                    id="email"
-                    {...register('email')}
-                  />
+                <div className="flexa">
+                  <div>
+                    <label htmlFor="password" className=" font-bold text-sm">
+                      Password
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      type="password"
+                      className="outline-none py-1 w-72 rounded-sm px-1 out"
+                      id="password"
+                      {...register('password')}
+                    />
+                    <br />
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="flexarise">
-              <div className="flexa">
-                <div>
-                  <label htmlFor="phone" className=" font-bold text-sm"></label>
-                </div>
-
-                <div>
-                  <input
-                    type="tel"
-                    className="outline-none py-1 w-72 rounded-sm px-1 out"
-                    id="phone"
-                    {...register('phone')}
-                  />
-                  <br />
-                </div>
-              </div>
-
-              <div className="flexa">
-                <div>
-                  <label htmlFor="password" className=" font-bold text-sm">
-                    Password
-                  </label>
-                </div>
-
-                <div>
-                  <input
-                    type="password"
-                    className="outline-none py-1 w-72 rounded-sm px-1 out"
-                    id="password"
-                    {...register('password')}
-                  />
-                  <br />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <button className="text-white  bg-blue-500 font-bold py-1 w-72 mt-4 rounded fle btn flexa">
-            Edit
-          </button>
-        </form>
-        {/* form */}
+            <button className="text-white  bg-blue-500 font-bold py-1 w-72 mt-4 rounded fle btn flexa">
+              Edit
+            </button>
+          </form>
+          {/* form */}
+        </div>
       </div>
     </div>
   );

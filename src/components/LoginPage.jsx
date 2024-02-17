@@ -82,7 +82,7 @@ const loginShema = yup.object().shape({
         <button className="text-white  bg-blue-500 font-bold py-1 w-72 mt-4 rounded"
         
         disabled={loading}>
-          {loading ?<ClipLoader color="white" size={33}/> : "Sign Up"}
+          {loading ?<ClipLoader color="white" size={33}/> : "Login"}
         </button>
 
         <div className="mt-3 text-center">
