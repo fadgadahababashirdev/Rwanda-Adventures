@@ -4,7 +4,7 @@ import Footer from '../kevin/Footer'
 import Servicepage from '../kevin/Servicepage'
 export default function Services() {
     return (
-        <div className='bg-black'>
+        <div className=''>
             <Navbar/>
             <Servicepage/>
              <Footer />         
