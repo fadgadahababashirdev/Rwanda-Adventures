@@ -9,9 +9,10 @@ import Component7 from '../kevin/component7';
 import Footer from '../kevin/Footer';
 import ContactUs from '../kevin/ContactUs';
 
+
 const Mainpage = () => {
     return (
-        <div>
+        <div className=''>
             <LandingPage />
             <Secondfirst />
             <ThirdFirst />

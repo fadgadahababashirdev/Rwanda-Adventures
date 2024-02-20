@@ -23,7 +23,7 @@ const Navbar = () => {
 
     return (
         <div className={`relative ${scrolling ? 'bg-white' : ''}`}>
-            <div className="flex justify-between navbar text-black p-0 t-0 r-0 l-0 z-10 fixed w-full">
+            <div className="flex justify-between navbar text-white p-0 t-0 r-0 l-0 z-10 fixed w-full">
                 <Link
                     to="LandingPage"
                     spy={true}
@@ -43,7 +43,7 @@ const Navbar = () => {
                         offset={-70}
                         duration={1000}
                     >
-                        <li className="text-black font-extrabold mx-5 cursor-pointer">Home</li>
+                        <li className="text-white font-extrabold mx-5 cursor-pointer">Home</li>
                     </Link>
                     <Link
                         to="five"
@@ -52,7 +52,7 @@ const Navbar = () => {
                         offset={-70}
                         duration={1000}
                     >
-                        <li className="text-black font-extrabold mx-5 cursor-pointer places">Places</li>
+                        <li className="text-white font-extrabold mx-5 cursor-pointer places">Places</li>
                     </Link>
                     <Link
                         to="second"
@@ -61,7 +61,7 @@ const Navbar = () => {
                         offset={-70}
                         duration={1000}
                     >
-                        <li className="text-black font-extrabold mx-5 cursor-pointer">Services</li>
+                        <li className="text-white font-extrabold mx-5 cursor-pointer">Services</li>
                     </Link>
                     <Link
                         to="Team"
@@ -70,7 +70,7 @@ const Navbar = () => {
                         offset={-70}
                         duration={1000}
                     >
-                        <li className="text-black font-extrabold mx-5 cursor-pointer">Team</li>
+                        <li className="text-white font-extrabold mx-5 cursor-pointer">Team</li>
                     </Link>
                     <Link
                         to="contact"
@@ -79,10 +79,10 @@ const Navbar = () => {
                         offset={-70}
                         duration={1000}
                     >
-                        <li className="text-black font-extrabold mx-5 cursor-pointer">Contact Us</li>
+                        <li className="text-white font-extrabold mx-5 cursor-pointer">Contact Us</li>
                     </Link>
                     <Link to="/Login">
-                        <li className="text-black font-extrabold mx-5 cursor-pointer">Login</li>
+                        <li className="text-white font-extrabold mx-5 cursor-pointer">Login</li>
                     </Link>
                     <img
                         src="/menu.svg" 

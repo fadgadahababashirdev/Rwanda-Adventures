@@ -4,10 +4,10 @@ import Footer from '../kevin/Footer'
 import Servicepage from '../kevin/Servicepage'
 export default function Services() {
     return (
-        <div>
-            <Navbar className="z-10"/>
+        <div className='bg-black'>
+            <Navbar/>
             <Servicepage/>
-             <Footer/>         
+             <Footer />         
         </div>
     )
 }

@@ -68,7 +68,7 @@ export default function ContactUs() {
 
     return (
         <div id='contact' className="mt-12">
-            <form className="flex flex-col gap-3  w-full justify-start max-w-lg mx-auto p-6 border rounded-lg shadow-lg bg-gray-50" onSubmit={handleSubmit}>
+            <form className="flex flex-col gap-3  w-full justify-start max-w-lg mx-auto p-6 border rounded-lg shadow-lg bg-blue-200 " onSubmit={handleSubmit}>
                 <h1 className="text-3xl font-semibold mb-4 text-center">Contact Us</h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
@@ -120,7 +120,7 @@ export default function ContactUs() {
                     onChange={handleChange}
                 />
                 {errors.message && <div className="text-red-500">{errors.message}</div>}
-                <button className="bg-blue-500 text-white font-semibold py-2 rounded-lg hover:bg-blue-600 transition duration-300" type="submit">Submit</button>
+                <button className="bg-green-400 text-white font-semibold py-2 rounded-lg hover:bg-green-800 transition duration-300" type="submit">Submit</button>
             </form>
         </div>
 

@@ -75,7 +75,7 @@ export default function Component5() {
                                     </p> {/* Use Unicode no-break space as a placeholder */}
                                 </div>
                             </div>
-                            <p className="text-center text-lg">Happiness has been defined in multiple ways...</p>
+                            <p className="text-center text-lg">Park</p>
                         </div>
                     ))}
                 </div>
