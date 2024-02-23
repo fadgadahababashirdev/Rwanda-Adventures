@@ -6,11 +6,13 @@ import Mainpage from './components/Mainpage';
 import { Context } from './components/TouristContext';
 import Services from './kevin/Services';
 import { ToastContainer } from 'react-toastify';
-import Aside from './components/dashboard/Aside';
-import Alltb from './components/tables/Alltb';
-import Userstable from './components/tables/Userstable';
+// import Aside from './components/dashboard/Aside';
+// import Alltb from './components/tables/Alltb';
+// import Userstable from './components/tables/Userstable';
 import Booking from './kevin/Booking';
 import TouristExperience from "./components/TouristExperience"
+import Places from './components/tables/Places';
+import PlaceForm from './components/forms/PlaceForm';
 
 const App = () => {
   const images = [
@@ -88,11 +90,13 @@ const App = () => {
           <Route path="/Login" element={<LoginPage />} />
           <Route path="/Register" element={<Register />} />
           <Route path="/Services" element={<Services />} />
-          <Route path="/dashboard" element={<Aside />} />
-          <Route path="/tables" element={<Alltb />} />
-          <Route path="/userstable" element={<Userstable />} />
+          {/* <Route path="/dashboard" element={<Aside />}/>*/}
+          {/* <Route path="/tables" element={<Alltb />} />
+          <Route path="/userstable" element={<Userstable />}/>*/}
           <Route path="/booking" element={<Booking />} />
-          <Route path="/TouristExperience" element={<TouristExperience/>} />
+          <Route path="/TouristExperience" element={<TouristExperience/>}/>
+          <Route path="/places" element={<Places/>}></Route>
+          <Route path="/createPlace"element={<PlaceForm/>}></Route>
         </Routes>
       </Router>
     </Context.Provider>

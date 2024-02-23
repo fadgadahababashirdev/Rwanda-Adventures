@@ -8,6 +8,7 @@ import { FaHome } from 'react-icons/fa';
 import { FaBookReader } from 'react-icons/fa';
 import { TbTournament } from 'react-icons/tb';
 import { SiPrintables } from 'react-icons/si';
+import { FaPlaceOfWorship } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 const Aside = () => {
   return (
@@ -122,6 +123,21 @@ const Aside = () => {
           </div>
         </div>
 
+        {/* second section */}
+        <div className="cards flex mt-10 mx-12">
+          <Link to="/places">
+            <div className="bg-white w-48 h-32 shadow-2xl relative rounded flex flex-col mx-3">
+              <h1 className="text-6xl absolute top-[-30px] mx-5 text-blue-400 flex">
+                <FaPlaceOfWorship />
+                <span className="text-black text-sm absolute mt-10 ml-24 font-bold">
+                  Places
+                </span>
+              </h1>
+              <h2 className="absolute mt-16 ml-24 text-3xl">32</h2>
+            </div>
+          </Link>
+        </div>
+        {/* ende of second section */}
         {/* cards */}
       </div>
     </div>
