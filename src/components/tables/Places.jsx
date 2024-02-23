@@ -15,22 +15,11 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { ClipLoader } from 'react-spinners';
 
-const Places = () => {
-  const [places, setPlaces] = useState([]);
+import { useContext } from 'react';
+import {Place}  from '../contexts/Place';
 
-  useEffect(() => {
-    const handlePlace = async () => {
-      try {
-        const url = 'https://rvbbackend.onrender.com/places';
-        let response = await axios.get(url);
-        const place = response.data.fndPlace;
-        setPlaces(place);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    handlePlace();
-  }, []);
+const Places = () => {
+  const { places } = useContext(Place);
   console.log(places);
   const [loading, setLoading] = useState(false);
   const [model, setModel] = useState(false);
@@ -55,6 +44,7 @@ const Places = () => {
       const response = await axios.put(url, data);
       console.log(response);
       toast.success('Place updated successfully');
+      window.location.reload("/places")
     } catch (error) {
       toast.warning('Place could not be updated');
       console.log(error);
@@ -62,6 +52,20 @@ const Places = () => {
       setLoading(false);
     }
   };
+
+  const handlePlaceDelete = async(id)=>{
+    try {
+      const url =`https://rvbbackend.onrender.com/delete/${id}`
+      const response = await axios.delete(url)
+      console.log(response)
+      confirm("Do you really want to delete the Place ? , Ok")
+      toast.success("Place deleted!!!")
+      window.location.reload("/places")
+    } catch (error) {
+      toast.warning("The place could not be deleted")
+      console.log(error)
+    }
+  }
   return (
     <div className="relative w-full h-full">
       <div className="flex bg-slate-100 w-full pr-5 relative">
@@ -181,7 +185,9 @@ const Places = () => {
                       >
                         <MdEdit />
                       </button>
-                      <button className="ml-2 text-red-600 hover:text-red-900 focus:outline-none focus:underline text-2xl">
+                      <button className="ml-2 text-red-600 hover:text-red-900 focus:outline-none focus:underline text-2xl"
+                      onClick={()=>handlePlaceDelete(place._id)}
+                      >
                         <MdDelete />
                       </button>
                     </td>

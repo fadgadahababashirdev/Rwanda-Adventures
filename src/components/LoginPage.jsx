@@ -7,8 +7,8 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { toast } from 'react-toastify';
 const LoginPage = () => {
-  const [loading,setLoading] = useState(false)
-  const navigate = useNavigate()
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const LoginSchema = yup.object().shape({
     email: yup
@@ -27,24 +27,25 @@ const LoginPage = () => {
 
   const LoginFunction = async (data) => {
     try {
-      setLoading(true)
+      setLoading(true);
       const url = 'https://rvbbackend.onrender.com/Login';
-      const response = await axios.post(url ,data);
+      const response = await axios.post(url, data);
       toast.success('user has logged in successfully');
-      navigate("/Alltb")
-      toast.warning("invalid password or email")
+      navigate('/tables');
+
       console.log(response.data);
     } catch (error) {
-      toast.warning(error);
-    }finally{
-      setLoading(false)
+      toast.warning('Check your password or email and try again', error);
+    } finally {
+      setLoading(false);
     }
   };
   return (
     <div className=" bg-white xw-screen h-screen flex justify-center items-center relative  backgrou">
       <Link to="/"> </Link>
-      <form className="rounded-md shadow-2xl justify-center items-center p-5 bg-white"
-      onSubmit ={handleSubmit(LoginFunction)}
+      <form
+        className="rounded-md shadow-2xl justify-center items-center p-5 bg-white"
+        onSubmit={handleSubmit(LoginFunction)}
       >
         <div>
           <h1 className="text-center font-bold text-2xl">Login</h1>
@@ -60,10 +61,12 @@ const LoginPage = () => {
                 placeholder="Email"
                 className="outline-none py-1 w-72 rounded-sm px-1 out"
                 id="email"
-                {...register("email")}
+                {...register('email')}
               />
               <br />
-              {errors.email && <p className='text-xs text-red'>{errors.email.message}</p>}
+              {errors.email && (
+                <p className="text-xs text-red">{errors.email.message}</p>
+              )}
             </div>
           </div>
           <div>
@@ -78,17 +81,22 @@ const LoginPage = () => {
                 placeholder="Password"
                 className="outline-none py-1 w-72 rounded-sm px-1 out"
                 id="password"
-                {...register("password")}
+                {...register('password')}
               />
               <br />
-              {errors.password && <p className='text-xs text-red-500'>{errors.password.message}</p>}
+              {errors.password && (
+                <p className="text-xs text-red-500">
+                  {errors.password.message}
+                </p>
+              )}
             </div>
           </div>
         </div>
-        <button className="text-white  bg-blue-500 font-bold py-1 w-72 mt-4 rounded"
-        disabled={loading}
+        <button
+          className="text-white  bg-blue-500 font-bold py-1 w-72 mt-4 rounded"
+          disabled={loading}
         >
-          {loading ?<ClipLoader/> : "Login"}
+          {loading ? <ClipLoader /> : 'Login'}
         </button>
 
         <Link to="/">
