@@ -9,18 +9,17 @@ import { SiPrintables } from 'react-icons/si';
 import { MdDelete } from 'react-icons/md';
 import { MdEdit } from 'react-icons/md';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 import { FaTimes } from 'react-icons/fa';
+import { ClipLoader } from 'react-spinners';
+import { useContext } from 'react';
+import { Tou } from '../contexts/Tou';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
-import { ClipLoader } from 'react-spinners';
+import axios from 'axios';
 
-import { useContext } from 'react';
-import { Place } from '../contexts/Place';
-
-const Places = () => {
-  const { places } = useContext(Place);
-  console.log(places);
+const Tours = () => {
+  const { tours } = useContext(Tou);
+  console.log(tours);
   const [loading, setLoading] = useState(false);
   const [model, setModel] = useState(false);
   const [page, setPage] = useState(false);
@@ -28,8 +27,9 @@ const Places = () => {
 
   const { register, handleSubmit, reset } = useForm({
     defaultValues: {
-      placeImage: selected ? selected.placeImage : '',
-      placeName: selected ? selected.placeName : '',
+      heading: selected ? selected.heading : '',
+      tourImage: selected ? selected.tourImage : '',
+      tourDescription: selected ? selected.tourDescription : '',
     },
   });
 
@@ -40,30 +40,27 @@ const Places = () => {
   const handleUpdate = async (data) => {
     try {
       setLoading(true);
-      const url = `https://rvbbackend.onrender.com/place/${selected._id}`;
+      const url = `https://rvbbackend.onrender.com/updateee/${selected._id}`;
       const response = await axios.put(url, data);
       console.log(response);
-      toast.success('Place updated successfully');
-      window.location.reload('/places');
+      toast.success('Tour updated successfully');
+      window.location.reload(true);
     } catch (error) {
-      toast.warning('Place could not be updated');
+      toast.warning('Tour could not be updated');
       console.log(error);
     } finally {
       setLoading(false);
     }
   };
-
-  const handlePlaceDelete = async (id) => {
+  const handleDelete = async (id) => {
     try {
-      const url = `https://rvbbackend.onrender.com/place/${id}`;
+      const url = `https://rvbbackend.onrender.com/deleteTour/${id}`;
       const response = await axios.delete(url);
-      console.log(response);
-      // confirm("Do you really want to delete the Place ? , Ok")
-      toast.success('Place deleted!!!');
+      confirm('Do you really want to delete this place , Ok');
+      toast.success('Deleted successfully');
       window.location.reload(true);
     } catch (error) {
-      toast.warning('The place could not be deleted');
-      console.log(error);
+      toast.warning('Could not delete');
     }
   };
   return (
@@ -134,10 +131,10 @@ const Places = () => {
                 <h1 className="text-2xl text-bold ml-4">PlacesActivities</h1>
               </div>
             </div>
-            <Link to="/createPlace">
+            <Link to="/CreateTour">
               {' '}
               <div className="pr-10 text-xs text-green-400 border-blue-50 font-bold">
-                Create Place
+                Create Tour
               </div>
             </Link>
           </div>
@@ -149,10 +146,13 @@ const Places = () => {
             <thead>
               <tr>
                 <th className="px-6 py-3 border-b-2 border-gray-300 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                  PlaceName
+                  TourName
                 </th>
                 <th className="px-6 py-3 border-b-2 border-gray-300 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                  PlaceImage
+                  TourDescription
+                </th>
+                <th className="px-6 py-3 border-b-2 border-gray-300 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                  TourImage
                 </th>
 
                 <th className="px-6 py-3 border-b-2 border-gray-300 text-center text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
@@ -162,17 +162,22 @@ const Places = () => {
               </tr>
             </thead>
             <tbody>
-              {places.map((place) => {
+              {tours.map((tour) => {
                 return (
-                  <tr key={place._id}>
+                  <tr key={tour._id}>
                     <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-300">
                       <div className="text-sm leading-5 text-gray-900">
-                        {place.placeName}
+                        {tour.heading}
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-300">
                       <div className="text-sm leading-5 text-gray-900">
-                        {place.placeImage}
+                        {tour.tourDescription}
+                      </div>
+                    </td>
+                    <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-300">
+                      <div className="text-sm leading-5 text-gray-900">
+                        {tour.tourImage}
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-300 text-sm leading-5 font-medium flex justify-center">
@@ -180,14 +185,14 @@ const Places = () => {
                         className="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline text-2xl cursor-pointer"
                         onClick={() => {
                           setPage(true);
-                          setSelected(place);
+                          setSelected(tour);
                         }}
                       >
                         <MdEdit />
                       </button>
                       <button
                         className="ml-2 text-red-600 hover:text-red-900 focus:outline-none focus:underline text-2xl"
-                        onClick={() => handlePlaceDelete(place._id)}
+                        onClick={() => handleDelete(tour._id)}
                       >
                         <MdDelete />
                       </button>
@@ -211,28 +216,28 @@ const Places = () => {
       >
         {page && (
           <form
-            className="bg-white w-1/3  flex justify-center py-5 pb-5 rounded-md shadow-2xl"
+            className="bg-white w-1/3  flex justify-center py-5 pb-5 rounded-md shadow-2xl absolute top-0 mt-8"
             onSubmit={handleSubmit(handleUpdate)}
           >
             <div
-              className="text-center absolute top-[-1px] bg-white p-3 mt-3 rounded-full cursor-pointer"
+              className="text-center absolute top-[-1px] bg-white p-3 mt-1 rounded-full cursor-pointer"
               onClick={() => setPage(false)}
             >
               <FaTimes />
             </div>
             <div>
               <h1 className="text-2xl font-sans font-bold text-center py-5">
-                Edit Place
+                Edit Tour
               </h1>
               <div>
-                <label htmlFor="placeName">Place Name</label>
+                <label htmlFor="placeName">Tour Name</label>
                 <div>
                   <input
                     type="text"
                     placeholder="PlaceName"
                     className="rounded-md py-2 px-2"
                     style={{ width: '22rem', outline: 'none' }}
-                    {...register('placeName')}
+                    {...register('heading')}
                   />
                   <br />
 
@@ -240,14 +245,26 @@ const Places = () => {
                 </div>
               </div>
               <div>
-                <label htmlFor="placeName">Place Image</label>
+                <label htmlFor="tourImage">Tour Image</label>
                 <div>
                   <input
                     type="file"
                     placeholder="Place for the image"
                     className="rounded-md py-2 px-2"
                     style={{ width: '22rem', outline: 'none' }}
-                    {...register('placeImage')}
+                    {...register('tourImage')}
+                  />
+                </div>
+                <div>
+                  <div>
+                    <label htmlFor="description">Tour Description</label>
+                  </div>
+                  <textarea
+                    type="text"
+                    placeholder=""
+                    className="rounded-md py-2 px-2"
+                    style={{ width: '22rem', outline: 'none' }}
+                    {...register('tourDescription')}
                   />
                 </div>
                 <br />
@@ -268,4 +285,4 @@ const Places = () => {
   );
 };
 
-export default Places;
+export default Tours;

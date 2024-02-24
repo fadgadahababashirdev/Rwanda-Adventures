@@ -28,7 +28,7 @@ const Aside = () => {
 
   const handleUpdate = async (data) => {
     try {
-      const url = `http://localhost:2121/update/${selected._id}`;
+      const url = `https://rvbbackend.onrender.com/update/${selected._id}`;
       const response = await axios.put(url, data);
       console.log(response);
       alert('updated  successfully');
@@ -41,7 +41,7 @@ const Aside = () => {
   useEffect(() => {
     const handleData = async () => {
       try {
-        const url = 'http://localhost:2121/users';
+        const url = 'https://rvbbackend.onrender.com/users';
         const response = await axios.get(url);
         console.log(response);
         setUsersData(response.data);
@@ -56,7 +56,7 @@ const Aside = () => {
 
   const handleDelete = async (id) => {
     try {
-      const url = `http://localhost:2121/delete/${id}`;
+      const url = `https://rvbbackend.onrender.com/delete/${id}`;
       const response = await axios.delete(url);
       console.log(response);
       confirm('Do you really want to delete this user?, ok');
