@@ -113,6 +113,7 @@ const Aside = () => {
             </div>
           </Link>
           <Link to="/Tours">
+
           <div className="bg-white w-48 h-32 shadow-2xl relative rounded flex flex-col mx-3">
             <h1 className="text-6xl absolute top-[-30px] mx-5 text-blue-400 flex">
               <TbTournament />
@@ -138,7 +139,21 @@ const Aside = () => {
               <h2 className="absolute mt-16 ml-24 text-3xl">32</h2>
             </div>
           </Link>
+
+          <Link to="/activities">
+            <div className="bg-white w-48 h-32 shadow-2xl relative rounded flex flex-col mx-3">
+              <h1 className="text-6xl absolute top-[-30px] mx-5 text-blue-400 flex">
+                <FaPlaceOfWorship />
+                <span className="text-black text-sm absolute mt-10 ml-24 font-bold">
+                  Activities
+                </span>
+              </h1>
+              <h2 className="absolute mt-16 ml-24 text-3xl">32</h2>
+            </div>
+          </Link>
+
         </div>
+        
         {/* ende of second section */}
         {/* cards */}
       </div>

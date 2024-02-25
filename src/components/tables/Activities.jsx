@@ -10,26 +10,27 @@ import { MdDelete } from 'react-icons/md';
 import { MdEdit } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { FaTimes } from 'react-icons/fa';
-import { ClipLoader } from 'react-spinners';
 import { useContext } from 'react';
-import { Tou } from '../contexts/Tou';
+import { Activ } from '../contexts/ActivityContext';
 import { useForm } from 'react-hook-form';
+import { ClipLoader } from 'react-spinners';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 
-const Tours = () => {
-  const { tours } = useContext(Tou);
-  console.log(tours);
+const Activities = () => {
+  // loadgin state
   const [loading, setLoading] = useState(false);
-  const [model, setModel] = useState(false);
+  const { activities } = useContext(Activ);
+  console.log(activities);
   const [page, setPage] = useState(false);
+
+  //   handle update section
   const [selected, setSelected] = useState(null);
 
   const { register, handleSubmit, reset } = useForm({
     defaultValues: {
-      heading: selected ? selected.heading : '',
+      tourName: selected ? selected.tourName : '',
       tourImage: selected ? selected.tourImage : '',
-      tourDescription: selected ? selected.tourDescription : '',
     },
   });
 
@@ -37,30 +38,35 @@ const Tours = () => {
     reset(selected);
   }, [selected]);
 
-  const handleUpdate = async (data) => {
+  //   function to update
+
+  const handleActivity = async (data) => {
     try {
       setLoading(true);
-      const url = `https://rvbbackend.onrender.com/updateee/${selected._id}`;
+      const url = `https://rvbbackend.onrender.com/updateActivity/${selected._id}`;
       const response = await axios.put(url, data);
-      console.log(response);
-      toast.success('Tour updated successfully');
+      console.log('The response is ', response);
+      toast.success('Activity updated Successfully');
       window.location.reload(true);
     } catch (error) {
-      toast.warning('Tour could not be updated');s
+      toast.warning('Activity update denied!');
       console.log(error);
     } finally {
       setLoading(false);
     }
   };
+
+  //   delete function
   const handleDelete = async (id) => {
     try {
-      const url = `https://rvbbackend.onrender.com/deleteTour/${id}`;
+      const url = `https://rvbbackend.onrender.com/removeActivity/${id}`;
       const response = await axios.delete(url);
-      confirm('Do you really want to delete this place , Ok');
-      toast.success('Deleted successfully');
+      confirm('Are you sure to remove this activity , Ok');
+      toast.success('Activity deleted successfully');
       window.location.reload(true);
     } catch (error) {
-      toast.warning('Could not delete');
+      toast.warning('The delete of the user could not be made');
+      console.log(error);
     }
   };
   return (
@@ -131,10 +137,10 @@ const Tours = () => {
                 <h1 className="text-2xl text-bold ml-4">PlacesActivities</h1>
               </div>
             </div>
-            <Link to="/CreateTour">
+            <Link to="/createActivity">
               {' '}
               <div className="pr-10 text-xs text-green-400 border-blue-50 font-bold">
-                Create Tour
+                Create Activity
               </div>
             </Link>
           </div>
@@ -146,10 +152,7 @@ const Tours = () => {
             <thead>
               <tr>
                 <th className="px-6 py-3 border-b-2 border-gray-300 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                  TourName
-                </th>
-                <th className="px-6 py-3 border-b-2 border-gray-300 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                  TourDescription
+                  TourActivity
                 </th>
                 <th className="px-6 py-3 border-b-2 border-gray-300 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                   TourImage
@@ -162,22 +165,17 @@ const Tours = () => {
               </tr>
             </thead>
             <tbody>
-              {tours.map((tour) => {
+              {activities.map((activity) => {
                 return (
-                  <tr key={tour._id}>
+                  <tr key={activity._id}>
                     <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-300">
                       <div className="text-sm leading-5 text-gray-900">
-                        {tour.heading}
+                        {activity.activityName}
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-300">
                       <div className="text-sm leading-5 text-gray-900">
-                        {tour.tourDescription}
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-300">
-                      <div className="text-sm leading-5 text-gray-900">
-                        {tour.tourImage}
+                        {activity.activityImage}
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-300 text-sm leading-5 font-medium flex justify-center">
@@ -185,14 +183,14 @@ const Tours = () => {
                         className="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline text-2xl cursor-pointer"
                         onClick={() => {
                           setPage(true);
-                          setSelected(tour);
+                          setSelected(activity);
                         }}
                       >
                         <MdEdit />
                       </button>
                       <button
                         className="ml-2 text-red-600 hover:text-red-900 focus:outline-none focus:underline text-2xl"
-                        onClick={() => handleDelete(tour._id)}
+                        onClick={() => handleDelete(activity._id)}
                       >
                         <MdDelete />
                       </button>
@@ -217,7 +215,7 @@ const Tours = () => {
         {page && (
           <form
             className="bg-white w-1/3  flex justify-center py-5 pb-5 rounded-md shadow-2xl absolute top-0 mt-8"
-            onSubmit={handleSubmit(handleUpdate)}
+            onSubmit={handleSubmit(handleActivity)}
           >
             <div
               className="text-center absolute top-[-1px] bg-white p-3 mt-1 rounded-full cursor-pointer"
@@ -227,17 +225,17 @@ const Tours = () => {
             </div>
             <div>
               <h1 className="text-2xl font-sans font-bold text-center py-5">
-                Edit Tour
+                Edit Activity
               </h1>
               <div>
-                <label htmlFor="placeName">Tour Name</label>
+                <label htmlFor="placeName">Activity Name</label>
                 <div>
                   <input
                     type="text"
-                    placeholder="PlaceName"
+                    placeholder="ActivityName"
                     className="rounded-md py-2 px-2"
                     style={{ width: '22rem', outline: 'none' }}
-                    {...register('heading')}
+                    {...register('activityName')}
                   />
                   <br />
 
@@ -245,28 +243,17 @@ const Tours = () => {
                 </div>
               </div>
               <div>
-                <label htmlFor="tourImage">Tour Image</label>
+                <label htmlFor="tourImage">Activity Image</label>
                 <div>
                   <input
                     type="file"
                     placeholder="Place for the image"
                     className="rounded-md py-2 px-2"
                     style={{ width: '22rem', outline: 'none' }}
-                    {...register('tourImage')}
+                    {...register('activityImage')}
                   />
                 </div>
-                <div>
-                  <div>
-                    <label htmlFor="description">Tour Description</label>
-                  </div>
-                  <textarea
-                    type="text"
-                    placeholder=""
-                    className="rounded-md py-2 px-2"
-                    style={{ width: '22rem', outline: 'none' }}
-                    {...register('tourDescription')}
-                  />
-                </div>
+
                 <br />
 
                 <button
@@ -274,7 +261,7 @@ const Tours = () => {
                   style={{ width: '22rem', outline: 'none' }}
                   disabled={loading}
                 >
-                  {loading ? <ClipLoader size={20} color="white" /> : 'Edit'}
+                  {loading ? <ClipLoader /> : 'Edit Activity'}
                 </button>
               </div>
             </div>
@@ -285,4 +272,4 @@ const Tours = () => {
   );
 };
 
-export default Tours;
+export default Activities;
