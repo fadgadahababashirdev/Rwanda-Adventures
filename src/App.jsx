@@ -6,9 +6,9 @@ import Mainpage from './components/Mainpage';
 import { Context } from './components/TouristContext';
 import Services from './kevin/Services';
 import { ToastContainer } from 'react-toastify';
-// import Aside from './components/dashboard/Aside';
-// import Alltb from './components/tables/Alltb';
-// import Userstable from './components/tables/Userstable';
+import Aside from './components/dashboard/Aside';
+import Alltb from './components/tables/Alltb';
+import Userstable from './components/tables/Userstable';
 import Booking from './kevin/Booking';
 import TouristExperience from './components/TouristExperience';
 import Places from './components/tables/Places';
@@ -18,9 +18,24 @@ import axios from 'axios';
 import { Place } from './components/contexts/Place';
 import Tours from './components/tables/Tours';
 import CreateTour from './components/forms/CreateTour';
-import { Tou } from './components/contexts/Tou';
 import Funplaces from './components/Funplaces';
+import Activities from './components/tables/Activities';
+import CreateActivity from './components/forms/CreateActivity';
+import { Tou } from './components/contexts/Tou';
+import { Activ } from './components/contexts/ActivityContext';
+
 const App = () => {
+  // Activities Data
+  const [activities, setActivities] = useState([]);
+  useEffect(() => {
+    const getActivities = async () => {
+      const url = 'https://rvbbackend.onrender.com/getActivity';
+      const response = await axios.get(url);
+      setActivities(response.data.seeActivity);
+    };
+    getActivities();
+  }, []);
+
   // Tours Data
   const [tours, setTours] = useState([]);
   useEffect(() => {
@@ -36,124 +51,65 @@ const App = () => {
     getTours();
   }, []);
 
-  // place data
+  // Place Data
   const [places, setPlaces] = useState([]);
-
   useEffect(() => {
     const handlePlace = async () => {
       try {
         const url = 'https://rvbbackend.onrender.com/places';
-        let response = await axios.get(url);
+        const response = await axios.get(url);
         const place = response.data.fndPlace;
         setPlaces(place);
       } catch (error) {
         console.log(error);
       }
     };
-
     handlePlace();
   }, []);
 
-  // end of place data
-
   const images = [
-    {
-      img: '../public/forest.jpg',
-      title: 'lorem Ipsum',
-      description:
-        'lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum',
-      id: '1',
-    },
-    {
-      img: '../public/frog.jpg',
-      title: 'lorem Ipsum',
-      description:
-        'lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum',
-      id: '2',
-    },
-    {
-      img: '../public/gollira.jpg',
-      title: 'lorem Ipsum',
-      description:
-        'lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum',
-
-      id: '3',
-    },
-    {
-      img: '../public/ima.jpg',
-      title: 'lorem Ipsum',
-      description:
-        'lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum',
-      id: '4',
-    },
-    {
-      img: '../public/iman.jpg',
-      title: 'lorem Ipsum',
-      description:
-        'lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum',
-      id: '5',
-    },
-    {
-      img: '../public/img.jpg',
-      title: 'lorem Ipsum',
-      description:
-        'lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum',
-      id: '6',
-    },
-    {
-      img: '../public/monkey.jpg',
-      title: 'lorem Ipsum',
-      description:
-        'lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum',
-      id: '7',
-    },
-    {
-      img: '../public/mountain.jpg',
-      title: 'lorem Ipsum',
-      description:
-        'lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum',
-      id: '8',
-    },
-    {
-      img: '../public/waterfalls.jpg',
-      title: 'lorem Ipsum',
-      description:
-        'lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum',
-      id: '9',
-    },
+    // Your images array
   ];
+
   return (
     <>
-      <Tou.Provider value={{tours}}>
-      <Place.Provider value={{ places }}>
-        <Context.Provider value={{ images }}>
-          <ToastContainer />
-          <Router>
-            <Routes>
-              <Route path="/" element={<Mainpage />} c />
-              <Route path="/Login" element={<LoginPage />} />
-              <Route path="/Register" element={<Register />} />
-              <Route path="/Services" element={<Services />} />
-              {/* <Route path="/dashboard" element={<Aside />} />
-              <Route path="/tables" element={<Alltb />} />
-              <Route path="/userstable" element={<Userstable />} /> */}
-              <Route path="/booking" element={<Booking />} />
-              <Route
-                path="/TouristExperience"
-                element={<TouristExperience />}
-              />
-              <Route path="/places" element={<Places />}></Route>
-              <Route path="/createPlace" element={<PlaceForm />}></Route>
-              <Route path="/Tours" element={<Tours />}></Route>
-              <Route path="/createTour" element={<CreateTour />}></Route>
-              <Route path="/Funplaces" element={<Funplaces />}></Route>
-            </Routes>
-          </Router>
-        </Context.Provider>
-      </Place.Provider>
-      </Tou.Provider>
-     
+      <Activ.Provider value={{ activities }}>
+        <Tou.Provider value={{ tours }}>
+          <Place.Provider value={{ places }}>
+            <Context.Provider value={{ images }}>
+              <ToastContainer />
+              <Router>
+                <Routes>
+                  <Route path="/" element={<Mainpage />} />
+                  <Route path="/Login" element={<LoginPage />} />
+                  <Route path="/Register" element={<Register />} />
+                  <Route path="/Services" element={<Services />} />
+                  <Route path="/dashboard" element={<Aside />} />
+                  <Route path="/tables" element={<Alltb />} />
+                  <Route path="/userstable" element={<Userstable />} />
+                  <Route path="/booking" element={<Booking />} />
+                  <Route
+                    path="/TouristExperience"
+                    element={<TouristExperience />}
+                  />
+                  <Route path="/places" element={<Places />} />
+                  <Route path="/createPlace" element={<PlaceForm />} />
+                  <Route path="/Tours" element={<Tours />} />
+                  <Route path="/createTour" element={<CreateTour />} />
+                  <Route path="/Funplaces" element={<Funplaces />} />
+                  <Route path="/activities" element={<Activities />} />
+                  <Route
+                    path="createActivity"
+                    element={<CreateActivity />}
+                  />
+                </Routes>
+              </Router>
+            </Context.Provider>
+          </Place.Provider>
+        </Tou.Provider>
+      </Activ.Provider>
     </>
   );
 };
+
 export default App;
