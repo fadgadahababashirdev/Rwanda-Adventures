@@ -62,11 +62,13 @@ export default function Component5() {
             <p className="border-b border-gray-500 w-full sm:w-1/2 pt-4 pb-4"></p>
             <h1 className="text-xl font-bold pt-4">{page.heading}</h1>
             <div className="flex flex-row gap-2 cursor-pointer">
-              <p className="flex flex-row gap-1 text-green-700 font-semibold text-sm" onClick={handleClick}>
+              <p
+                className="flex flex-row gap-1 text-green-700 font-semibold text-sm"
+                onClick={handleClick}
+              >
                 {page.text}
                 <FaArrowRight className="ml-2 w-5 h-4  text-green-700" />
               </p>
-             
             </div>
           </div>
           <div>
@@ -75,19 +77,29 @@ export default function Component5() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:mx-50 pt-10">
           {places.map((place, index) => (
-            <div key={place._id} className="flex flex-col justify-center items-center">
+            <div
+              key={place._id}
+              className="flex flex-col justify-center items-center"
+            >
               <div className="relative">
                 <img
                   src={place.placeImage}
                   alt="Download"
                   className="h-52 object-cover rounded-md transition-transform transform hover:scale-110 p-4"
+                  style={{ height: '30em' }}
                 />
                 <div className="absolute bottom-0 right-0 flex flex-col items-center ml-10 md:flex-row lg:flex-row">
                   <CiHeart
-                    className={`text-${liked[index] ? 'red-400' : 'black'} text-xl hover:text-red-400 cursor-pointer mt-3`}
+                    className={`text-${
+                      liked[index] ? 'red-400' : 'black'
+                    } text-xl hover:text-red-400 cursor-pointer mt-3`}
                     onClick={() => handleLikeClick(index)}
                   />
-                  <p className={`text-lg text-${liked[index] ? 'red-400' : 'black'}`}>
+                  <p
+                    className={`text-lg text-${
+                      liked[index] ? 'red-400' : 'black'
+                    }`}
+                  >
                     {formatLikesCount(likes[index]) || '\u00A0'}
                   </p>
                   {/* Use Unicode no-break space as a placeholder */}
