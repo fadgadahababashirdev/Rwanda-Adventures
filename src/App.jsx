@@ -19,7 +19,7 @@ import { Place } from './components/contexts/Place';
 import Tours from './components/tables/Tours';
 import CreateTour from './components/forms/CreateTour';
 import { Tou } from './components/contexts/Tou';
-
+import Funplaces from './components/Funplaces';
 const App = () => {
   // Tours Data
   const [tours, setTours] = useState([]);
@@ -146,6 +146,7 @@ const App = () => {
               <Route path="/createPlace" element={<PlaceForm />}></Route>
               <Route path="/Tours" element={<Tours />}></Route>
               <Route path="/createTour" element={<CreateTour />}></Route>
+              <Route path="/Funplaces" element={<Funplaces />}></Route>
             </Routes>
           </Router>
         </Context.Provider>

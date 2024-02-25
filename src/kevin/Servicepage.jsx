@@ -65,7 +65,11 @@ export default function ServicePage() {
         const navigate = useNavigate();
 
         const handleClick = () => {
-            navigate('/booking');
+    
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top of the page
+        setTimeout(() => {
+            navigate('/booking'); // Navigate after a small delay
+        }, 300); 
         };
 
         return (
@@ -85,7 +89,7 @@ export default function ServicePage() {
                 <h1 className="text-center text-3xl  font-semibold pt-10 text-black">Our Services</h1>
                 <div className="flex flex-row justify-between">
                     <h3 className=" text-2xl text-center  font-bold  text-black">Tours</h3>
-                    <p className="border-b border-gray-500 w-full sm:w-1/2 pt-4 pb-4"></p>
+                    <p className="border-b border-gray-500 w-full sm:w-1/2 pt-4 pb-4 hidden lg:block md:block "></p>
                 </div>
 
                 <div className="flex flex-col gap-5 items-center">
@@ -93,6 +97,7 @@ export default function ServicePage() {
                         <div className="relative">
                             <div className="h-72 w-72 md:w-auto overflow-hidden rounded-md">
                                 <img src={Page[0].image} alt="Guided Tour" className="h-full w-full object-cover" />
+
                             </div>
                             <div className="absolute bottom-0 left-0 right-0 p-10 text-center bg-white bg-opacity-0">
                                 <h1 className="text-2xl font-bold ">{Page[0].title}</h1>
@@ -131,22 +136,22 @@ export default function ServicePage() {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col md:flex-row justify-between py-10">
-    <h3 className="text-2xl font-bold mt-2 md:w-1/2"> Activities</h3>
-    <div className="flex flex-col md:flex-col w-full md:w-1/2 justify-between items-center">
+                <div id='service' className="flex flex-col md:flex-row justify-between py-10">
+                    <h3  className="text-2xl font-bold mt-2 md:w-1/2 text-black"> Activities</h3>
+                    <div className="flex flex-col md:flex-col w-full md:w-1/2 justify-between items-center">
 
-    <div className="border-t border-black">
-    <p className="text-lg h-1/2 w-1/2 md:w-auto text-black">
-In Rwanda, beyond its renowned national parks, immerse yourself in vibrant cultural experiences, thrilling outdoor adventures, and captivating historical sites. Explore bustling markets, embark on scenic hikes, and engage with local communities for an unforgettable journey.</p>
-</div>
+                        <div className="border-t border-black">
+                            <p className="text-lg h-1/  lg:w-full md:w-auto text-black">
+                                In Rwanda, beyond its renowned national parks, immerse yourself in vibrant cultural experiences, thrilling outdoor adventures, and captivating historical sites. Explore bustling markets, embark on scenic hikes, and engage with local communities for an unforgettable journey.</p>
+                        </div>
 
-       
-    </div>
-</div>
 
-                <div className=" flex flex-col md:grid grid-cols-3 lg:grid-cols-3 justify-evenly  gap-10 ">
-                    <div className="flex flex-col md:flex-row gap-2 mx-2 items-center  ">
-                    <div className="relative">
+                    </div>
+                </div>
+
+                <div className=" flex flex-col md:grid grid-cols-3 lg:grid-cols-3 justify-evenly  gap-5 ">
+                    <div className="flex flex-col md:flex-row gap-5 mx-2 items-center  ">
+                        <div className="relative shadow-xl  ">
                             <div className="h-72 w-72 md:w-auto overflow-hidden rounded-md">
                                 <img src={activities[0].image} alt="Guided Tour" className="h-full w-full object-cover transition-transform transform hover:scale-110" />
                             </div>
@@ -157,7 +162,7 @@ In Rwanda, beyond its renowned national parks, immerse yourself in vibrant cultu
 
                     </div>
                     <div className="flex flex-col md:flex-row gap-2 mx-2 items-center">
-                    <div className="relative">
+                        <div className="relative shadow-xl ">
                             <div className="h-72 w-72 md:w-auto overflow-hidden rounded-md">
                                 <img src={activities[1].image} alt="Guided Tour" className="h-full w-full object-cover transition-transform transform hover:scale-110" />
                             </div>
@@ -168,7 +173,7 @@ In Rwanda, beyond its renowned national parks, immerse yourself in vibrant cultu
 
                     </div>
                     <div className="flex flex-col md:flex-row gap-2 mx-2 items-center">
-                    <div className="relative">
+                        <div className="relative shadow-xl ">
                             <div className="h-72 w-72 md:w-auto overflow-hidden rounded-md">
                                 <img src={activities[2].image} alt="Guided Tour" className="h-full w-full object-cover transition-transform transform hover:scale-110" />
                             </div>
@@ -178,7 +183,7 @@ In Rwanda, beyond its renowned national parks, immerse yourself in vibrant cultu
                         </div>
                     </div>
                     <div className="flex flex-col md:flex-row gap-2 mx-2 items-center">
-                    <div className="relative">
+                        <div className="relative shadow-xl ">
                             <div className="h-72 w-72 md:w-auto overflow-hidden rounded-md">
                                 <img src={activities[3].image} alt="Guided Tour" className="h-full w-full object-cover transition-transform transform hover:scale-110" />
                             </div>
@@ -188,7 +193,7 @@ In Rwanda, beyond its renowned national parks, immerse yourself in vibrant cultu
                         </div>
                     </div>
                     <div className="flex flex-col md:flex-row gap-2 mx-2 items-center">
-                        <div className="relative">
+                        <div className="relative shadow-xl ">
                             <div className="h-72 w-72 md:w-auto overflow-hidden rounded-md">
                                 <img src={activities[4].image} alt="Guided Tour" className="h-full w-full object-cover transition-transform transform hover:scale-110" />
                             </div>
@@ -199,14 +204,14 @@ In Rwanda, beyond its renowned national parks, immerse yourself in vibrant cultu
                     </div>
 
                     <div className="flex flex-col md:flex-row gap-2 mx-2 items-center">
-                       <div className="relative">
-    <div className="h-72 w-72 md:w-auto overflow-hidden rounded-md shadow">
-        <img src={activities[5].image} alt="Guided Tour" className="h-full w-full object-cover transition-transform transform hover:scale-110" />
-    </div>
-    <div className="absolute bottom-0 left-0 right-0 p-10 text-center bg-white bg-opacity-0">
-        <h1 className="text-2xl font-bold">{activities[5].title}</h1>
-    </div>
-</div>
+                        <div className="relative shadow-xl ">
+                            <div className="h-72 w-72 md:w-auto overflow-hidden rounded-md shadow">
+                                <img src={activities[5].image} alt="Guided Tour" className="h-full w-full object-cover transition-transform transform hover:scale-110" />
+                            </div>
+                            <div className="absolute bottom-0 left-0 right-0 p-10 text-center bg-white bg-opacity-0">
+                                <h1 className="text-2xl font-bold">{activities[5].title}</h1>
+                            </div>
+                        </div>
 
 
                     </div>

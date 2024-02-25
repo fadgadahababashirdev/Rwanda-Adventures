@@ -5,7 +5,11 @@ const ServiceButton = () => {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate('/Services');
+        
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top of the page
+        setTimeout(() => {
+            navigate('/Services'); // Navigate after a small delay
+        }, 300); 
     };
 
     return (
@@ -25,7 +29,7 @@ const Secondfirst = () => {
         <div id='second' className="w-full h-full mt-2">
             <div className="imageontop">
                 <div className="imageandp">
-                    <img src="../public/illa.jpg" alt="" />
+                    <img src="../public/img.jpg" alt="" />
                     <div className="bg-blue-200 p-3 bluediv">
                         <p className="font-bold">OUR SERVICES</p>
                         <p className="text-sm mt-4">

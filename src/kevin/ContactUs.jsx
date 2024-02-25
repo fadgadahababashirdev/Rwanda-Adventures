@@ -68,7 +68,7 @@ export default function ContactUs() {
 
     return (
         <div id='contact' className="mt-12">
-            <form className="flex flex-col gap-3  w-full justify-start max-w-lg mx-auto p-6 border rounded-lg shadow-lg bg-blue-200 " onSubmit={handleSubmit}>
+            <form className="flex flex-col gap-3  w-full justify-start max-w-lg mx-auto p-6 border rounded-lg shadow-xl bg-slate-300 " onSubmit={handleSubmit}>
                 <h1 className="text-3xl font-semibold mb-4 text-center">Contact Us</h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
