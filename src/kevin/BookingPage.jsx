@@ -25,7 +25,7 @@ export default function Bookingpage() {
       .integer('This field must have integer')
       .required('This input fiel is required'),
     date: yup.date().required('This field is required'),
-    message: yup.string(),
+    // message: yup.string(),
   });
   const {
     register,
@@ -132,12 +132,12 @@ export default function Bookingpage() {
                 {errors.date.message}
               </p>
             )}
-            <textarea
+            {/* <textarea
               name="message"
               placeholder="Message"
               className="input h-32"
               {...register('message')}
-            ></textarea>
+            ></textarea> */}
           </div>
           <button
             type="submit"

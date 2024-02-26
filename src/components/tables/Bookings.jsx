@@ -163,9 +163,9 @@ const Bookings = () => {
                   Date
                 </th>
 
-                <th className="px-6 py-3 border-b-2 border-gray-300 text-center text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                {/* <th className="px-6 py-3 border-b-2 border-gray-300 text-center text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                   Message
-                </th>
+                </th> */}
                 <th className="px-6 py-3 border-b-2 border-gray-300"></th>
               </tr>
             </thead>
@@ -198,11 +198,11 @@ const Bookings = () => {
                         {book.date}
                       </div>
                     </td>
-                    <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-300">
+                    {/* <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-300">
                       <div className="text-sm leading-5 text-gray-900">
                         {book.message}
                       </div>
-                    </td>
+                    </td> */}
                     <td className="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-300 text-sm leading-5 font-medium flex justify-center">
                       <button
                         className="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline text-2xl cursor-pointer"
