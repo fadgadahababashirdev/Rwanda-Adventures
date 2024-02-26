@@ -24,8 +24,8 @@ export default function Bookingpage() {
       .min(2)
       .integer('This field must have integer')
       .required('This input fiel is required'),
-    date: yup.date().required('This field is required'),
-    // message: yup.string(),
+    date: yup.string().required('This field is required'),
+    message: yup.string(),
   });
   const {
     register,
@@ -47,16 +47,19 @@ export default function Bookingpage() {
     try {
       setLoading(true);
       const url = 'https://rvbbackend.onrender.com/book';
-      const response = await axios.post(url,data);
+      const formData = new FormData();
+      const response = await axios.post(url, data);
       console.log(response);
       toast.success('Your booking request is sent!');
     } catch (error) {
       toast.warning('The booking could not be created');
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <div className="book container  mx-auto px-4  h-screen ">
+    <div className="book container  mx-auto px-4  py-4 mb-10 h-screen ">
       <button className="bg-green-700 hover:bg-green-900 text-white px-2 py-2 rounded-md mt-4 flex items-center">
         <FaArrowLeft className="mr-2 w-5 h-5" />
         <ServiceButton />
@@ -136,7 +139,7 @@ export default function Bookingpage() {
               name="message"
               placeholder="Message"
               className="input h-32"
-              {...register('message')}
+             
             ></textarea> */}
           </div>
           <button
