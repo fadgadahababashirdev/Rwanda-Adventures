@@ -10,7 +10,21 @@ import { TbTournament } from 'react-icons/tb';
 import { SiPrintables } from 'react-icons/si';
 import { FaPlaceOfWorship } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
+import { Book } from '../contexts/Book';
+import { Place } from '../contexts/Place';
+import { useContext } from 'react';
+import { Activ } from '../contexts/ActivityContext';
+import { Tou } from '../contexts/Tou';
+import { Omo } from '../contexts/Admin';
+
 const Aside = () => {
+  const { booking } = useContext(Book);
+  const { places } = useContext(Place);
+  const { activities } = useContext(Activ);
+  const { tours } = useContext(Tou);
+  const {userData} = useContext(Omo)
+  console.log("The data finally arrive" , userData)
+
   return (
     <div className="flex bg-slate-100">
       <div
@@ -83,15 +97,19 @@ const Aside = () => {
         {/* cards */}
 
         <div className="cards flex mt-10 mx-12">
-          <div className="bg-white w-48 h-32 shadow-2xl relative rounded flex flex-col mx-3">
-            <h1 className="text-6xl absolute top-[-30px] mx-5 text-blue-400 flex">
-              <FaBookReader />
-              <span className="text-black text-sm absolute mt-10 ml-24 font-bold">
-                Bookings
-              </span>
-            </h1>
-            <h2 className="absolute mt-16 ml-24 text-3xl">32</h2>
-          </div>
+          <Link to="/bookingg">
+            <div className="bg-white w-48 h-32 shadow-2xl relative rounded flex flex-col mx-3">
+              <h1 className="text-6xl absolute top-[-30px] mx-5 text-blue-400 flex">
+                <FaBookReader />
+                <span className="text-black text-sm absolute mt-10 ml-24 font-bold">
+                  Bookings
+                </span>
+              </h1>
+              <h2 className="absolute mt-16 ml-24 text-3xl">
+                {booking.length}
+              </h2>
+            </div>
+          </Link>
           <div className="bg-white w-48 h-32 shadow-2xl relative rounded flex flex-col mx-3">
             <h1 className="text-6xl absolute top-[-30px] mx-5 text-blue-400 flex">
               <FcCollaboration />
@@ -109,20 +127,19 @@ const Aside = () => {
                   users
                 </span>
               </h1>
-              <h2 className="absolute mt-16 ml-24 text-3xl">32</h2>
+              <h2 className="absolute mt-16 ml-24 text-3xl">{userData.length}</h2>
             </div>
           </Link>
           <Link to="/Tours">
-
-          <div className="bg-white w-48 h-32 shadow-2xl relative rounded flex flex-col mx-3">
-            <h1 className="text-6xl absolute top-[-30px] mx-5 text-blue-400 flex">
-              <TbTournament />
-              <span className="text-black text-sm absolute mt-10 ml-24 font-bold">
-                Tours
-              </span>
-            </h1>
-            <h2 className="absolute mt-16 ml-24 text-3xl">32</h2>
-          </div>
+            <div className="bg-white w-48 h-32 shadow-2xl relative rounded flex flex-col mx-3">
+              <h1 className="text-6xl absolute top-[-30px] mx-5 text-blue-400 flex">
+                <TbTournament />
+                <span className="text-black text-sm absolute mt-10 ml-24 font-bold">
+                  Tours
+                </span>
+              </h1>
+              <h2 className="absolute mt-16 ml-24 text-3xl">{tours.length}</h2>
+            </div>
           </Link>
         </div>
 
@@ -136,7 +153,7 @@ const Aside = () => {
                   Places
                 </span>
               </h1>
-              <h2 className="absolute mt-16 ml-24 text-3xl">32</h2>
+              <h2 className="absolute mt-16 ml-24 text-3xl">{places.length}</h2>
             </div>
           </Link>
 
@@ -148,12 +165,13 @@ const Aside = () => {
                   Activities
                 </span>
               </h1>
-              <h2 className="absolute mt-16 ml-24 text-3xl">32</h2>
+              <h2 className="absolute mt-16 ml-24 text-3xl">
+                {activities.length}
+              </h2>
             </div>
           </Link>
-
         </div>
-        
+
         {/* ende of second section */}
         {/* cards */}
       </div>

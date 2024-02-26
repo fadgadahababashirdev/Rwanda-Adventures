@@ -23,8 +23,41 @@ import Activities from './components/tables/Activities';
 import CreateActivity from './components/forms/CreateActivity';
 import { Tou } from './components/contexts/Tou';
 import { Activ } from './components/contexts/ActivityContext';
+import Bookings from './components/tables/Bookings';
+import { Book } from './components/contexts/Book';
+import { Omo } from './components/contexts/Admin';
 
 const App = () => {
+  //  users data
+  const [userData, setUsersData] = useState([]);
+  useEffect(() => {
+    const handleData = async () => {
+      try {
+        const url = 'https://rvbbackend.onrender.com/users';
+        const response = await axios.get(url);
+
+        setUsersData(response.data);
+      } catch (error) {
+        console.log(error);
+        console.log('data not got ');
+      }
+    };
+
+    handleData();
+  }, []);
+  // const Booking
+  const [booking, setBooking] = useState([]);
+
+  useEffect(() => {
+    const handleBooks = async () => {
+      try {
+        const url = 'https://rvbbackend.onrender.com/bookings';
+        const response = await axios.get(url);
+        setBooking(response.data.books);
+      } catch (error) {}
+    };
+    handleBooks();
+  }, []);
   // Activities Data
   const [activities, setActivities] = useState([]);
   useEffect(() => {
@@ -67,47 +100,48 @@ const App = () => {
     handlePlace();
   }, []);
 
-  const images = [
-    // Your images array
-  ];
+  // usersData
 
+  const images = [];
   return (
     <>
-      <Activ.Provider value={{ activities }}>
-        <Tou.Provider value={{ tours }}>
-          <Place.Provider value={{ places }}>
-            <Context.Provider value={{ images }}>
-              <ToastContainer />
-              <Router>
-                <Routes>
-                  <Route path="/" element={<Mainpage />} />
-                  <Route path="/Login" element={<LoginPage />} />
-                  <Route path="/Register" element={<Register />} />
-                  <Route path="/Services" element={<Services />} />
-                  <Route path="/dashboard" element={<Aside />} />
-                  <Route path="/tables" element={<Alltb />} />
-                  <Route path="/userstable" element={<Userstable />} />
-                  <Route path="/booking" element={<Booking />} />
-                  <Route
-                    path="/TouristExperience"
-                    element={<TouristExperience />}
-                  />
-                  <Route path="/places" element={<Places />} />
-                  <Route path="/createPlace" element={<PlaceForm />} />
-                  <Route path="/Tours" element={<Tours />} />
-                  <Route path="/createTour" element={<CreateTour />} />
-                  <Route path="/Funplaces" element={<Funplaces />} />
-                  <Route path="/activities" element={<Activities />} />
-                  <Route
-                    path="createActivity"
-                    element={<CreateActivity />}
-                  />
-                </Routes>
-              </Router>
-            </Context.Provider>
-          </Place.Provider>
-        </Tou.Provider>
-      </Activ.Provider>
+    <Omo.Provider value={{userData}}>
+      <Book.Provider value={{ booking }}>
+        <Activ.Provider value={{ activities }}>
+          <Tou.Provider value={{ tours }}>
+            <Place.Provider value={{ places }}>
+              <Context.Provider value={{ images }}>
+                <ToastContainer />
+                <Router>
+                  <Routes>
+                    <Route path="/" element={<Mainpage />} />
+                    <Route path="/Login" element={<LoginPage />} />
+                    <Route path="/Register" element={<Register />} />
+                    <Route path="/Services" element={<Services />} />
+                    <Route path="/dashboard" element={<Aside />} />
+                    <Route path="/tables" element={<Alltb />} />
+                    <Route path="/userstable" element={<Userstable />} />
+                    <Route path="/booking" element={<Booking />} />
+                    <Route
+                      path="/TouristExperience"
+                      element={<TouristExperience />}
+                    />
+                    <Route path="/places" element={<Places />} />
+                    <Route path="/createPlace" element={<PlaceForm />} />
+                    <Route path="/Tours" element={<Tours />} />
+                    <Route path="/createTour" element={<CreateTour />} />
+                    <Route path="/Funplaces" element={<Funplaces />} />
+                    <Route path="/activities" element={<Activities />} />
+                    <Route path="createActivity" element={<CreateActivity />} />
+                    <Route path="/bookingg" element={<Bookings />}></Route>
+                  </Routes>
+                </Router>
+              </Context.Provider>
+            </Place.Provider>
+          </Tou.Provider>
+        </Activ.Provider>
+      </Book.Provider>
+      </Omo.Provider>
     </>
   );
 };

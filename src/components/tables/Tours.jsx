@@ -128,7 +128,7 @@ const Tours = () => {
                 <div className="flex items-center">
                   <FaHome /> / <h1 className="text-sm">Dashboard</h1>
                 </div>
-                <h1 className="text-2xl text-bold ml-4">PlacesActivities</h1>
+                <h1 className="text-2xl text-bold ml-4">Tours</h1>
               </div>
             </div>
             <Link to="/CreateTour">

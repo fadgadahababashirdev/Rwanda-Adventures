@@ -10,9 +10,11 @@ import { MdDelete } from 'react-icons/md';
 import { MdEdit } from 'react-icons/md';
 import axios from 'axios';
 import {useForm} from "react-hook-form"
+import { Omo } from '../contexts/Admin';
+import { useContext } from 'react';
 
 const Aside = () => {
-  const [usersData, setUsersData] = useState([]);
+const {userData} = useContext(Omo)
   const [view, setView] = useState(false);
   const [selected, setSelected] = useState(null);
 
@@ -40,21 +42,6 @@ const Aside = () => {
     }
   };
 
-  useEffect(() => {
-    const handleData = async () => {
-      try {
-        const url = 'https://rvbbackend.onrender.com/users';
-        const response = await axios.get(url);
-        console.log(response);
-        setUsersData(response.data);
-      } catch (error) {
-        console.log(error);
-        console.log('data not got ');
-      }
-    };
-    console.log(selected);
-    handleData();
-  }, []);
 
   const handleDelete = async (id) => {
     try {
@@ -162,7 +149,7 @@ const Aside = () => {
             </tr>
           </thead>
           <tbody>
-            {usersData.map((user) => {
+            {userData.map((user) => {
               return (
                 <tr key={user._id}>
                   <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-300">

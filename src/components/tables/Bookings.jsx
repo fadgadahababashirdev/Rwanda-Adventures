@@ -14,13 +14,11 @@ import { FaTimes } from 'react-icons/fa';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { ClipLoader } from 'react-spinners';
-
 import { useContext } from 'react';
-import { Place } from '../contexts/Place';
+import { Book } from '../contexts/Book';
 
-const Places = () => {
-  const { places } = useContext(Place);
-  console.log(places);
+const Bookings = () => {
+  const { booking } = useContext(Book);
   const [loading, setLoading] = useState(false);
   const [model, setModel] = useState(false);
   const [page, setPage] = useState(false);
@@ -28,11 +26,14 @@ const Places = () => {
 
   const { register, handleSubmit, reset } = useForm({
     defaultValues: {
-      placeImage: selected ? selected.placeImage : '',
-      placeName: selected ? selected.placeName : '',
+      fullName: selected ? selected.fullName : '',
+      email: selected ? selected.email : '',
+      phone: selected ? selected.phone : '',
+      date: selected ? selected.date : '',
+      numberOfPeople: selected ? selected.fullName : '',
+      message: selected ? selected.fullName : '',
     },
   });
-
   useEffect(() => {
     reset(selected);
   }, [selected]);
@@ -40,32 +41,30 @@ const Places = () => {
   const handleUpdate = async (data) => {
     try {
       setLoading(true);
-      const url = `https://rvbbackend.onrender.com/place/${selected._id}`;
+      const url = `https://rvbbackend.onrender.com/updateBook/${selected._id}`;
       const response = await axios.put(url, data);
+      toast.success('Data updated successfully');
       console.log(response);
-      toast.success('Place updated successfully');
-      window.location.reload('/places');
     } catch (error) {
-      toast.warning('Place could not be updated');
+      toast.warning('could not update a booking');
       console.log(error);
     } finally {
       setLoading(false);
     }
   };
-
-  const handlePlaceDelete = async (id) => {
+   
+  const handleDelete = async(id)=>{
     try {
-      const url = `https://rvbbackend.onrender.com/place/${id}`;
-      const response = await axios.delete(url);
-      console.log(response);
-      // confirm("Do you really want to delete the Place ? , Ok")
-      toast.success('Place deleted!!!');
-      window.location.reload(true);
+      const url = `https://rvbbackend.onrender.com/book/${id}`
+      const response = await axios.delete(url)
+      confirm("Do you really want to delete this booking ? , OK ")
+      toast.success("Booking deleted successfully")
+      window.location.reload(true)
     } catch (error) {
-      toast.warning('The place could not be deleted');
-      console.log(error);
+      toast.warning("Could not delete booking")
+      console.log(error)
     }
-  };
+  }
   return (
     <div className="relative w-full h-full">
       <div className="flex bg-slate-100 w-full pr-5 relative">
@@ -131,7 +130,7 @@ const Places = () => {
                 <div className="flex items-center">
                   <FaHome /> / <h1 className="text-sm">Dashboard</h1>
                 </div>
-                <h1 className="text-2xl text-bold ml-4">Places</h1>
+                <h1 className="text-2xl text-bold ml-4">Bookings</h1>
               </div>
             </div>
             <Link to="/createPlace">
@@ -149,30 +148,59 @@ const Places = () => {
             <thead>
               <tr>
                 <th className="px-6 py-3 border-b-2 border-gray-300 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                  PlaceName
+                  FullName
                 </th>
                 <th className="px-6 py-3 border-b-2 border-gray-300 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                  PlaceImage
+                  Email
+                </th>
+                <th className="px-6 py-3 border-b-2 border-gray-300 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                  Phone
+                </th>
+                <th className="px-6 py-3 border-b-2 border-gray-300 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                  Number of people
+                </th>
+                <th className="px-6 py-3 border-b-2 border-gray-300 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                  Date
                 </th>
 
                 <th className="px-6 py-3 border-b-2 border-gray-300 text-center text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                  Actions
+                  Message
                 </th>
                 <th className="px-6 py-3 border-b-2 border-gray-300"></th>
               </tr>
             </thead>
             <tbody>
-              {places.map((place) => {
+              {booking.map((book) => {
                 return (
-                  <tr key={place._id}>
+                  <tr key={book._id}>
                     <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-300">
                       <div className="text-sm leading-5 text-gray-900">
-                        {place.placeName}
+                        {book.fullName}
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-300">
                       <div className="text-sm leading-5 text-gray-900">
-                        {place.placeImage}
+                        {book.email}
+                      </div>
+                    </td>
+                    <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-300">
+                      <div className="text-sm leading-5 text-gray-900">
+                        {book.phone}
+                      </div>
+                    </td>
+                    <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-300">
+                      <div className="text-sm leading-5 text-gray-900">
+                        {book.numberOfPeople}
+                      </div>
+                    </td>
+                    <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-300">
+                      <div className="text-sm leading-5 text-gray-900">
+                        {book.date}
+                      </div>
+                    </td>
+                    <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-300">
+                      <div className="text-sm leading-5 text-gray-900">
+                        {book.message}
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-300 text-sm leading-5 font-medium flex justify-center">
@@ -180,16 +208,15 @@ const Places = () => {
                         className="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline text-2xl cursor-pointer"
                         onClick={() => {
                           setPage(true);
-                          setSelected(place);
+                          setSelected(book);
                         }}
                       >
                         <MdEdit />
                       </button>
-                      <button
-                        className="ml-2 text-red-600 hover:text-red-900 focus:outline-none focus:underline text-2xl"
-                        onClick={() => handlePlaceDelete(place._id)}
-                      >
-                        <MdDelete />
+                      <button className="ml-2 text-red-600 hover:text-red-900 focus:outline-none focus:underline text-2xl">
+                        <MdDelete 
+                        onClick={()=>handleDelete(book._id)}
+                        />
                       </button>
                     </td>
                   </tr>
@@ -211,7 +238,7 @@ const Places = () => {
       >
         {page && (
           <form
-            className="bg-white w-1/3  flex justify-center py-5 pb-5 rounded-md shadow-2xl"
+            className="bg-red-500 my-5 w-1/2  flex justify-center py-5 pb-5 rounded-md shadow-2xl"
             onSubmit={handleSubmit(handleUpdate)}
           >
             <div
@@ -222,36 +249,108 @@ const Places = () => {
             </div>
             <div>
               <h1 className="text-2xl font-sans font-bold text-center py-5">
-                Edit Place
+                Edit Booking
               </h1>
-              <div>
-                <label htmlFor="placeName">Place Name</label>
+              {/* divi */}
+              <div className="flex justify-between ">
                 <div>
-                  <input
-                    type="text"
-                    placeholder="PlaceName"
-                    className="rounded-md py-2 px-2"
-                    style={{ width: '22rem', outline: 'none' }}
-                    {...register('placeName')}
-                  />
-                  <br />
+                  <label htmlFor="placeName">Full Name</label>
+                  <div>
+                    <input
+                      type="text"
+                      className="rounded-md py-2 px-2 "
+                      style={{ width: '22rem', outline: 'none' }}
+                      {...register('fullName')}
+                    />
+                    <br />
 
-                  <p className="text-red-500 text-xs text-start"></p>
+                    <p className="text-red-500 text-xs text-start"></p>
+                  </div>
+                </div>
+                <div>
+                  <label htmlFor="placeName">Email</label>
+                  <div>
+                    <input
+                      type="email"
+                      className="rounded-md py-2 px-2"
+                      style={{ width: '22rem', outline: 'none' }}
+                      {...register('email')}
+                    />
+                    <br />
+
+                    <p className="text-red-500 text-xs text-start"></p>
+                  </div>
                 </div>
               </div>
-              <div>
-                <label htmlFor="placeName">Place Image</label>
+              {/* div */}
+              {/* div */}
+              <div className="flex justify-between ">
                 <div>
-                  <input
-                    type="file"
-                    placeholder="Place for the image"
-                    className="rounded-md py-2 px-2"
-                    style={{ width: '22rem', outline: 'none' }}
-                    {...register('placeImage')}
-                  />
-                </div>
-                <br />
+                  <label htmlFor="placeName">Phone</label>
+                  <div>
+                    <input
+                      type="text"
+                      className="rounded-md py-2 px-2"
+                      style={{ width: '22rem', outline: 'none' }}
+                      {...register('phone')}
+                    />
+                    <br />
 
+                    <p className="text-red-500 text-xs text-start"></p>
+                  </div>
+                </div>
+                <div>
+                  <label htmlFor="placeName">Number Of People</label>
+                  <div>
+                    <input
+                      type="text"
+                      className="rounded-md py-2 px-2"
+                      style={{ width: '22rem', outline: 'none' }}
+                      {...register('numberOfPeople')}
+                    />
+                    <br />
+
+                    <p className="text-red-500 text-xs text-start"></p>
+                  </div>
+                </div>
+              </div>
+              {/* div */}
+
+              {/* div */}
+              <div className="flex justify-between ">
+                <div>
+                  <label htmlFor="placeName">Date</label>
+                  <div>
+                    <input
+                      type="date"
+                      className="rounded-md py-2 px-2"
+                      style={{ width: '22rem', outline: 'none' }}
+                      {...register('date')}
+                    />
+                    <br />
+
+                    <p className="text-red-500 text-xs text-start"></p>
+                  </div>
+                </div>
+                <div>
+                  <label htmlFor="placeName">Message</label>
+                  <div>
+                    <input
+                      type="text"
+                      className="rounded-md py-2 px-2"
+                      style={{ width: '22rem', outline: 'none' }}
+                      {...register('message')}
+                    />
+                    <br />
+
+                    <p className="text-red-500 text-xs text-start"></p>
+                  </div>
+                </div>
+              </div>
+              {/* div */}
+              {/* div */}
+
+              <div>
                 <button
                   className="bg-blue-400 text-white font-sans mt-5 rounded-md py-2 px-2"
                   style={{ width: '22rem', outline: 'none' }}
@@ -268,4 +367,4 @@ const Places = () => {
   );
 };
 
-export default Places;
+export default Bookings;
